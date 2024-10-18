@@ -1,14 +1,29 @@
-import React from 'react';
+// Home.js
+import React, { useEffect, useState } from 'react';
 import { Box, Heading, Text, Link } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa'; // Importing social media icons
 import video from '../assets/bganime2.mp4';
+import Splash from '../components/Splash'; // Import the Splash component
 
 const MotionBox = motion(Box);
 
 const Home = () => {
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    // Hide the splash screen after 3 seconds
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 3000); // Adjust the duration (in milliseconds) as needed
+
+    return () => clearTimeout(timer); // Cleanup on unmount
+  }, []);
+
   return (
     <>
+      {showSplash && <Splash />} {/* Show the splash screen while loading */}
+
       <Box position="relative" height="100vh" overflow="hidden">
         {/* Background Video */}
         <video
@@ -44,29 +59,23 @@ const Home = () => {
         >
           {/* GitHub Icon Link */}
           <Link href="https://github.com" isExternal aria-label="GitHub">
-            <FaGithub size="36" color="white"
-              style={{ transition: 'color 0.3s', ':hover': { color: 'teal.500' } }} />
+            <FaGithub size="36" color="white" style={{ transition: 'color 0.3s', ':hover': { color: 'teal.500' } }} />
           </Link>
           <Link href="https://www.linkedin.com" isExternal aria-label="LinkedIn">
-            <FaLinkedin size="36" color="white"
-              style={{ transition: 'color 0.3s', ':hover': { color: 'teal.500' } }} />
+            <FaLinkedin size="36" color="white" style={{ transition: 'color 0.3s', ':hover': { color: 'teal.500' } }} />
           </Link>
           <Link href="https://www.facebook.com" isExternal aria-label="Facebook">
-            <FaFacebook size="36" color="white" 
-              style={{ transition: 'color 0.3s', ':hover': { color: 'teal.500' } }} />
+            <FaFacebook size="36" color="white" style={{ transition: 'color 0.3s', ':hover': { color: 'teal.500' } }} />
           </Link>
           <Link href="https://www.twitter.com" isExternal aria-label="Twitter">
-            <FaTwitter size="36" color="white"
-              style={{ transition: 'color 0.3s', ':hover': { color: 'teal.500' } }} />
+            <FaTwitter size="36" color="white" style={{ transition: 'color 0.3s', ':hover': { color: 'teal.500' } }} />
           </Link>
           <Link href="https://www.instagram.com" isExternal aria-label="Instagram">
-            <FaInstagram size="36" color="white"
-              style={{ transition: 'color 0.3s', ':hover': { color: 'teal.500' } }} />
+            <FaInstagram size="36" color="white" style={{ transition: 'color 0.3s', ':hover': { color: 'teal.500' } }} />
           </Link>
           {/* WhatsApp Icon Link */}
           <Link href="https://wa.me/your-number" isExternal aria-label="WhatsApp">
-            <FaWhatsapp size="36" color="white"
-              style={{ transition: 'color 0.3s', ':hover': { color: 'teal.500' } }} />
+            <FaWhatsapp size="36" color="white" style={{ transition: 'color 0.3s', ':hover': { color: 'teal.500' } }} />
           </Link>
         </Box>
 

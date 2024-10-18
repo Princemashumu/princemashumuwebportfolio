@@ -51,20 +51,20 @@ const Navbar = () => {
           </Link>
           <Link
             as={RouterLink}
-            to="/about"
-            color={location.pathname === '/about' ? activeColor : 'white'}
-            mr={4}
+            to="/Skills"
+            color={location.pathname === '/Skills' ? activeColor : 'white'}
             _hover={{ color: hoverColor }}
           >
             Skills
           </Link>
           <Link
             as={RouterLink}
-            to="/contact"
-            color={location.pathname === '/contact' ? activeColor : 'white'}
+            to="/about"
+            color={location.pathname === '/about' ? activeColor : 'white'}
+            mr={4}
             _hover={{ color: hoverColor }}
           >
-            Contact
+            About
           </Link>
         </Flex>
 
