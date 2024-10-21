@@ -20,14 +20,14 @@ const Splash = () => {
       {/* Circular Loader */}
       <Box
         position="absolute"
-        width="100px" // Size of the loader
-        height="100px"
+        width="50px" // Size of the loader
+        height="50px"
         borderRadius="50%"
         border="8px solid purple" // Border color
         borderTop="8px solid transparent" // Transparent top for the spinning effect
         animation="spin 1s linear infinite" // Animation
         zIndex="1000" // Ensure the loader is above the background
-        bottom="30%" // Adjust this value to move the loader down
+        bottom="10%" // Adjust this value to move the loader down
       />
       {/* Logo */}
       <Image src={logo} alt="Splash Logo" width="450px" /> {/* Adjust the logo size as needed */}
