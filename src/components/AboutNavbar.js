@@ -4,8 +4,6 @@ import {
 } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/letter-p.png';
-import ProjectsPopup from '../components/ProjectsPopup';
-import SkillsPopup from '../components/SkillsPopup';
 import AboutPopup from '../components/AboutPopup';
 import SplashLoader from '../components/Splash';
 
@@ -14,14 +12,8 @@ const NavbarComponent = () => {
   const [loading, setLoading] = useState(false); // Loading state for splash loader
   const navigate = useNavigate();
 
-  // Function to close the popup and show loader
   const handlePopupClose = () => {
-    setLoading(true); // Show splash loader before closing popup
-
-    setTimeout(() => {
-      setActivePopup(null); // Close the popup after a brief delay
-      setLoading(false); // Hide loader after delay
-    }, 1000); // 1 second delay for smooth transition
+    setActivePopup(null); // Close all popups
   };
 
   const handleNavClick = (target) => {
@@ -57,15 +49,7 @@ const NavbarComponent = () => {
             <Nav className="mx-auto" style={{ gap: '50px', fontFamily: 'Anta, sans-serif', fontWeight: '400' }}>
               {activePopup === null ? (
                 <>
-                  <Nav.Link style={{ color: 'skyblue' }} onClick={() => handleNavClick('home')}>
-                    Home
-                  </Nav.Link>
-                  <Nav.Link style={{ color: 'skyblue' }} onClick={() => handleNavClick('projects')}>
-                    Projects
-                  </Nav.Link>
-                  <Nav.Link style={{ color: 'skyblue' }} onClick={() => handleNavClick('skills')}>
-                    Skills
-                  </Nav.Link>
+    
                   <Nav.Link style={{ color: 'skyblue' }} onClick={() => handleNavClick('about')}>
                     About Me
                   </Nav.Link>
@@ -73,7 +57,7 @@ const NavbarComponent = () => {
               ) : (
                 // Render close buttons when a popup is active
                 <>
-                  <Nav.Link style={{ color: 'skyblue' }} onClick={handlePopupClose}>
+                  <Nav.Link style={{ color: 'skyblue' }} onClick={() => handlePopupClose()}>
                     Close {activePopup}
                   </Nav.Link>
                 </>
@@ -108,8 +92,7 @@ const NavbarComponent = () => {
       </Navbar>
 
       {/* Popup Components */}
-      {activePopup === 'projects' && <ProjectsPopup isOpen onClose={handlePopupClose} />}
-      {activePopup === 'skills' && <SkillsPopup isOpen onClose={handlePopupClose} />}
+
       {activePopup === 'about' && <AboutPopup isOpen onClose={handlePopupClose} />}
     </>
   );
