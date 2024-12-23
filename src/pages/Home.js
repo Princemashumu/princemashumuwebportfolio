@@ -18,6 +18,7 @@ import Lottie from 'lottie-react';
 import animationData1 from '../assets/anime7.json';
 import animationData2 from '../assets/anime7 (2).json';
 import Splash from '../components/Splash';
+import Projects from './Projects'; // Import the Projects component
 
 const MotionBox = motion(Box);
 
@@ -33,6 +34,60 @@ const colors = {
   border: '#9dd5d4',
 };
 
+// Animation variants for individual letters
+const letterVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      duration: 5
+    }
+  }
+};
+
+// Animation variant for the container
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.5,
+      repeat: Infinity,
+      repeatDelay: 10
+    }
+  }
+};
+
+const AnimatedText = ({ text }) => {
+  return (
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      style={{ display: 'flex', gap: '10px' }}
+    >
+      {text.split('').map((char, index) => (
+        <motion.span
+          key={index}
+          variants={letterVariants}
+          style={{
+            display: 'inline-block',
+            fontWeight: "500",
+            fontSize: "60px",
+            color: colors.secondaryAccent,
+            fontFamily: "Anta, sans-serif",
+            letterSpacing: "10px"
+          }}
+        >
+          {char}
+        </motion.span>
+      ))}
+    </motion.div>
+  );
+};
+
 const Home = () => {
   const [showSplash, setShowSplash] = useState(true);
  
@@ -44,7 +99,6 @@ const Home = () => {
     return () => clearTimeout(timer);
   }, []);
 
-
   return (
     <>
       {showSplash && <Splash />}
@@ -55,7 +109,7 @@ const Home = () => {
           loop
           style={{
             position: 'absolute',
-            top: '76%',
+            top: '26%',
             left: '85%',
             width: '44%',
             height: '44%',
@@ -133,39 +187,29 @@ const Home = () => {
             </Heading>
           </MotionBox>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            loop
+          <MotionBox
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2, duration: 1 }}
+            mt={10}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            flexDirection="column"
           >
-            <Text
-              fontWeight="500"
-              letterSpacing="10px"
-              fontSize="60px"
-              color={colors.secondaryAccent}
-              mb={5}
-              fontFamily="Anta, sans-serif"
-              _hover={{ transform: 'translateY(-10px)' }}
+            <Text color={colors.primaryText} fontSize="xl">Scroll Down</Text>
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ repeat: Infinity, duration: 1.5 }}
+              style={{ marginTop: "10px" }}
             >
-              FULL STACK DEVELOPER
-            </Text>
-          </motion.div>
-
-          <Lottie
-            animationData={animationData2}
-            loop
-            style={{
-              position: 'fixed',
-              top: '35%',
-              left: '22%',
-              width: '50%',
-              height: '50%',
-              transform: 'translate(-50%, -50%)',
-            }}
-          />
+              <Box as="span" width="10px" height="10px" bg={colors.secondaryAccent} borderRadius="50%" display="block" />
+            </motion.div>
+          </MotionBox>
         </Box>
       </Box>
+
+      <Projects /> {/* Adding the Projects component here */}
     </>
   );
 };
