@@ -50,9 +50,7 @@ const NavbarComponent = () => {
               {activePopup === null ? (
                 <>
             
-                  <Nav.Link style={{ color: 'skyblue' }} onClick={() => handleNavClick('skills')}>
-                    Skills
-                  </Nav.Link>
+               
                  
                 </>
               ) : (

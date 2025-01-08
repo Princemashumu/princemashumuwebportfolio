@@ -8,7 +8,7 @@ import Lottie from 'lottie-react';
 import animationData1 from '../assets/anime1.json';
 
 const colors = {
-  backgroundPrimary: 'black',
+  backgroundPrimary: 'black.900',
   primaryText: 'white',
   accent: '#800080', // Purple
   secondaryAccent: '#9dd5d4', // Light teal
@@ -32,7 +32,7 @@ const SkillsPopup = ({ isOpen, onClose }) => {
         left="0"
         width="100vw"
         height="100vh"
-        bg="rgba(0, 0, 0, 3)"
+        backgroundColor=' rgb(23,25,35)'
         color={colors.primaryText}
         zIndex="1050"
         overflowY="auto"
