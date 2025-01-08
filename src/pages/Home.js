@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'; 
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   Heading,
   Text,
   Link,
+  Image,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import {
@@ -16,15 +17,17 @@ import {
 } from 'react-icons/fa';
 import Lottie from 'lottie-react';
 import animationData1 from '../assets/anime7.json';
-import animationData2 from '../assets/anime7 (2).json';
+import animationData2 from '../assets/anime8.json';
 import Splash from '../components/Splash';
 import Projects from './Projects'; // Import the Projects component
+import Me from '../assets/ME.png';
+
 
 const MotionBox = motion(Box);
 
 // Centralized color configuration
 const colors = {
-  backgroundPrimary: 'black',
+  backgroundPrimary: 'gray.900',
   primaryText: 'white',
   accent: '#800080', // Purple
   secondaryAccent: '#9dd5d4', // Light teal
@@ -155,37 +158,69 @@ const Home = () => {
         </Box>
 
         <Box
-          position="relative"
-          zIndex={1}
-          display="flex"
-          alignItems="flex-start"
-          justifyContent="flex-start"
-          flexDirection="column"
-          color={colors.primaryText}
-          textAlign="left"
-          height="100%"
-          top="60%"
-          gap="0"
-          paddingLeft="9%"
-        >
-          <MotionBox
-            initial={{ opacity: 0, x: '-100vw' }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ type: 'spring', stiffness: 50, duration: 2 }}
-            mr={2}
-          >
-            <Heading
-              fontFamily="Anta, sans-serif"
-              fontWeight="400"
-              as="h1"
-              size="2xl"
-              mb={5}
-              color={colors.primaryText}
-              letterSpacing="5px"
-            >
-              <Text as="span" color={colors.accent}>Digital</Text> Solutions, <br /> One Line of Code at a Time.
-            </Heading>
-          </MotionBox>
+  position="relative"
+  zIndex={1}
+  display="flex"
+  alignItems="flex-start"
+  justifyContent="flex-start"
+  flexDirection="column"
+  color={colors.primaryText}
+  textAlign="left"
+  height="100%"
+  top="30%"
+  left="15%"
+  gap="1rem"
+  paddingLeft="9%"
+>
+  <MotionBox
+    initial={{ opacity: 0, x: '-100vw' }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ type: 'spring', stiffness: 50, duration: 5 }}
+  >
+    <Heading
+      fontFamily="Anta, sans-serif"
+      fontWeight="400"
+      as="h1"
+      size="2xl"
+      mb={5}
+      color={colors.primaryText}
+      letterSpacing="5px"
+    >
+      <Text as="span" color={colors.accent}>Hi,</Text> I am a Software Engineer.
+    </Heading>
+  </MotionBox>
+
+  <Box
+    mt={6}
+    fontFamily="Anta, sans-serif"
+    fontSize="lg"
+    lineHeight="1.8"
+    letterSpacing="1.5px"
+    p={6}
+    borderRadius="md"
+    border={`1px solid ${colors.border}`}
+    boxShadow="lg"
+    // bg="linear-gradient(to bottom, #f8f9fa, #e9ecef)" // Subtle gradient for modern look
+    color={colors.primaryText}
+  >
+  <Text mb={3}>
+      <strong style={{ color: colors.accent }}>Full Name:</strong> Prince Ngwako Mashumu
+    </Text>
+    <Text mb={3}>
+      <strong style={{ color: colors.accent }}>CodeTribe Location:</strong> Soweto, Johannesburg
+    </Text>
+    <Text mb={3}>
+      <strong style={{ color: colors.accent }}>Program Enrolled:</strong> Digital Solutions Developer
+    </Text>
+    <Text mb={3}>
+      <strong style={{ color: colors.accent }}>Contact Information:</strong> princengwakomashumu@gmail.com, 0682606328
+    </Text>
+    <Text>
+      <strong style={{ color: colors.accent }}>Date:</strong> {new Date().toLocaleDateString()}
+    </Text>
+</Box>
+</Box>
+{/* </MotionBox> */}
 
           <MotionBox
             initial={{ opacity: 0 }}
@@ -197,7 +232,6 @@ const Home = () => {
             justifyContent="center"
             flexDirection="column"
           >
-            <Text color={colors.primaryText} fontSize="xl">Scroll Down</Text>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
@@ -207,9 +241,57 @@ const Home = () => {
             </motion.div>
           </MotionBox>
         </Box>
-      </Box>
 
-      <Projects /> {/* Adding the Projects component here */}
+         {/* Small circle on the right side */}
+         <Box
+          position="fixed"
+          right="2.5%"
+          top="62.9%"
+          bottom="10%"
+          zIndex="3"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <motion.div
+            animate={{ y: [0, 20, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5 }}
+          >
+            <Box
+              width="30px"
+              height="30px"
+              bg={colors.secondaryAccent}
+              borderRadius="50%"
+              display="block"
+            />
+          </motion.div>
+          {/* Circle Container */}
+          <Box
+            width="450px"
+            height="450px"
+            left="95%" 
+            top="60%"
+            borderRadius="50%"
+            // border="4px solid white"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            overflow="hidden"
+          >
+            {/* Placeholder Image */}
+            <Box
+              width="500px"
+              height="500px"
+              // bg="gray.200"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Image src={Me} alt="Prince" borderRadius="50%" />
+            </Box>
+          </Box>
+        </Box>
+
     </>
   );
 };
