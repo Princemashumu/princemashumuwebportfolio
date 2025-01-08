@@ -48,7 +48,7 @@ const NavbarComponent = () => {
         <Container fluid>
           <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
             <img src={logo} alt="Logo" width="40" />
-            <span style={{ color: 'white', letterSpacing: '6px', fontFamily: 'Anta, sans-serif', fontWeight: '500' }}>
+            <span style={{ color: 'white', letterSpacing: '6px', fontFamily: 'Anta, sans-serif', fontWeight: '500' }} onClick={() => handleNavClick('home')}>
               RINCE MASHUMU
             </span>
           </Navbar.Brand>
@@ -66,9 +66,9 @@ const NavbarComponent = () => {
                   <Nav.Link style={{ color: 'skyblue' }} onClick={() => handleNavClick('skills')}>
                     Skills
                   </Nav.Link>
-                  <Nav.Link style={{ color: 'skyblue' }} onClick={() => handleNavClick('about')}>
+                  {/* <Nav.Link style={{ color: 'skyblue' }} onClick={() => handleNavClick('about')}>
                     About Me
-                  </Nav.Link>
+                  </Nav.Link> */}
                 </>
               ) : (
                 // Render close buttons when a popup is active

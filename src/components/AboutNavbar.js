@@ -50,9 +50,7 @@ const NavbarComponent = () => {
               {activePopup === null ? (
                 <>
     
-                  <Nav.Link style={{ color: 'skyblue' }} onClick={() => handleNavClick('about')}>
-                    About Me
-                  </Nav.Link>
+              
                 </>
               ) : (
                 // Render close buttons when a popup is active

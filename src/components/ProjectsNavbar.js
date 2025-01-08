@@ -36,11 +36,11 @@ const NavbarComponent = () => {
       {/* Splash Loader */}
       {loading && <SplashLoader />}
 
-      <Navbar bg="transparent" expand="lg" fixed="top" className="px-4" style={{ zIndex: 1000 }}>
+      <Navbar bg="transparent" expand="lg"  className="px-4" style={{ zIndex: 1000 }}>
         <Container fluid>
           <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
             <img src={logo} alt="Logo" width="40" />
-            <span style={{ color: 'white', letterSpacing: '6px', fontFamily: 'Anta, sans-serif', fontWeight: '500' }}>
+            <span style={{ color: 'white', letterSpacing: '6px', fontFamily: 'Anta, sans-serif', fontWeight: '500' }} onClick={() => handleNavClick('home')}>
               RINCE MASHUMU
             </span>
           </Navbar.Brand>
@@ -50,9 +50,7 @@ const NavbarComponent = () => {
               {activePopup === null ? (
                 <>
     
-                  <Nav.Link style={{ color: 'skyblue' }} onClick={() => handleNavClick('projects')}>
-                    Projects
-                  </Nav.Link>
+                  {/*  */}
                  
                 </>
               ) : (
