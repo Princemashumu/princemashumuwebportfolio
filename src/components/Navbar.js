@@ -8,6 +8,9 @@ import ProjectsPopup from '../components/ProjectsPopup';
 import SkillsPopup from '../components/SkillsPopup';
 import AboutPopup from '../components/AboutPopup';
 import SplashLoader from '../components/Splash';
+import AssesmentsPopup from './Assesmentspopup';
+import { BsDownload } from 'react-icons/bs';
+
 
 const NavbarComponent = () => {
   const [activePopup, setActivePopup] = useState(null); // Single state for managing the active popup
@@ -54,31 +57,46 @@ const NavbarComponent = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar-nav" />
           <Navbar.Collapse id="navbar-nav" className="justify-content-between">
-            <Nav className="mx-auto" style={{ gap: '50px', fontFamily: 'Anta, sans-serif', fontWeight: '400' }}>
-              {activePopup === null ? (
-                <>
-                  <Nav.Link style={{ color: 'skyblue' }} onClick={() => handleNavClick('home')}>
-                    Home
-                  </Nav.Link>
-                  <Nav.Link style={{ color: 'skyblue' }} onClick={() => handleNavClick('projects')}>
-                    Projects
-                  </Nav.Link>
-                  <Nav.Link style={{ color: 'skyblue' }} onClick={() => handleNavClick('skills')}>
-                    Skills
-                  </Nav.Link>
-                  {/* <Nav.Link style={{ color: 'skyblue' }} onClick={() => handleNavClick('about')}>
-                    About Me
-                  </Nav.Link> */}
-                </>
-              ) : (
-                // Render close buttons when a popup is active
-                <>
-                  <Nav.Link style={{ color: 'skyblue' }} onClick={handlePopupClose}>
-                    Close {activePopup}
-                  </Nav.Link>
-                </>
-              )}
-            </Nav>
+          <Nav
+  className="mx-auto"
+  style={{
+    gap: '30px',
+    fontFamily: 'Anta, sans-serif',
+    fontWeight: '400',
+  }}
+>
+  {activePopup === null ? (
+    <>
+      {['home', 'projects', 'skills', 'assesments', 'about'].map((link) => (
+        <Nav.Link
+          key={link}
+          style={{
+            color: 'skyblue',
+            transition: 'color 0.3s ease',
+          }}
+          onMouseOver={(e) => (e.currentTarget.style.color = '#b800ff ')}
+          onMouseOut={(e) => (e.currentTarget.style.color = 'skyblue')}
+          onClick={() => handleNavClick(link)}
+        >
+          {link.charAt(0).toUpperCase() + link.slice(1)} {/* Capitalize the first letter */}
+        </Nav.Link>
+      ))}
+    </>
+  ) : (
+    <Nav.Link
+      style={{
+        color: 'skyblue',
+        transition: 'color 0.3s ease',
+      }}
+      onMouseOver={(e) => (e.currentTarget.style.color = 'purple')}
+      onMouseOut={(e) => (e.currentTarget.style.color = 'skyblue')}
+      onClick={handlePopupClose}
+    >
+      Close {activePopup}
+    </Nav.Link>
+  )}
+</Nav>
+
 
             <OverlayTrigger
               placement="bottom"
@@ -96,11 +114,16 @@ const NavbarComponent = () => {
                   borderRadius: '25px',
                   fontFamily: 'Anta, sans-serif',
                   fontWeight: '400',
+                  padding: '10px 20px', // Add padding for better spacing
+                  display: 'flex', // Ensure proper alignment
+                  alignItems: 'center',
+                  gap: '8px', // Space between icon and text
                 }}
                 onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#993399')}
                 onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#800080')}
               >
-                <i className="bi bi-download"></i> Download Resume
+                <BsDownload size={20} style={{ marginRight: '5px' }} /> {/* Icon with size */}
+                 Resume
               </Button>
             </OverlayTrigger>
           </Navbar.Collapse>
@@ -111,6 +134,8 @@ const NavbarComponent = () => {
       {activePopup === 'projects' && <ProjectsPopup isOpen onClose={handlePopupClose} />}
       {activePopup === 'skills' && <SkillsPopup isOpen onClose={handlePopupClose} />}
       {activePopup === 'about' && <AboutPopup isOpen onClose={handlePopupClose} />}
+      {activePopup === 'assesments' && <AssesmentsPopup isOpen onClose={handlePopupClose} />}
+
     </>
   );
 };

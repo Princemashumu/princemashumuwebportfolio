@@ -4,7 +4,7 @@ import {
 } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/letter-p.png';
-import ProjectsPopup from '../components/ProjectsPopup';
+import SkillsPopup from '../components/SkillsPopup';
 import SplashLoader from '../components/Splash';
 import { BsDownload } from 'react-icons/bs';
 
@@ -38,11 +38,11 @@ const NavbarComponent = () => {
       {/* Splash Loader */}
       {loading && <SplashLoader />}
 
-      <Navbar bg="transparent" expand="lg"  className="px-4" style={{ zIndex: -1 , position: 'static'}}>
+      <Navbar bg="transparent" expand="lg" fixed="top" className="px-4" style={{ zIndex: 1000 }}>
         <Container fluid>
           <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
             <img src={logo} alt="Logo" width="40" />
-            <span style={{ color: 'white', letterSpacing: '6px', fontFamily: 'Anta, sans-serif', fontWeight: '500' }} onClick={() => handleNavClick('home')}>
+            <span style={{ color: 'white', letterSpacing: '6px', fontFamily: 'Anta, sans-serif', fontWeight: '500' }}>
               RINCE MASHUMU
             </span>
           </Navbar.Brand>
@@ -51,8 +51,8 @@ const NavbarComponent = () => {
             <Nav className="mx-auto" style={{ gap: '50px', fontFamily: 'Anta, sans-serif', fontWeight: '400' }}>
               {activePopup === null ? (
                 <>
-    
-                  {/*  */}
+            
+               
                  
                 </>
               ) : (
@@ -70,35 +70,37 @@ const NavbarComponent = () => {
               overlay={<Tooltip id="button-tooltip">Download resume</Tooltip>}
             >
               <Button
-  as="a"
-  href="https://drive.google.com/uc?export=download&id=112u74R9KDHlTPyegWofwC9KZtFTpTCBq"
-  download
-  variant="primary"
-  style={{
-    backgroundColor: '#800080',
-    borderColor: '#800080',
-    color: 'white',
-    borderRadius: '25px',
-    fontFamily: 'Anta, sans-serif',
-    fontWeight: '400',
-    padding: '10px 20px', // Add padding for better spacing
-    display: 'flex', // Ensure proper alignment
-    alignItems: 'center',
-    gap: '8px', // Space between icon and text
-  }}
-  onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#993399')}
-  onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#800080')}
->
-  <BsDownload size={20} style={{ marginRight: '5px' }} /> {/* Icon with size */}
-   Resume
-</Button>
+                as="a"
+                href="https://drive.google.com/uc?export=download&id=112u74R9KDHlTPyegWofwC9KZtFTpTCBq"
+                download
+                variant="primary"
+                style={{
+                  backgroundColor: '#800080',
+                  borderColor: '#800080',
+                  color: 'white',
+                  borderRadius: '25px',
+                  fontFamily: 'Anta, sans-serif',
+                  fontWeight: '400',
+                  padding: '10px 20px', // Add padding for better spacing
+                  display: 'flex', // Ensure proper alignment
+                  alignItems: 'center',
+                  gap: '8px', // Space between icon and text
+                }}
+                onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#993399')}
+                onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#800080')}
+              >
+                <BsDownload size={20} style={{ marginRight: '5px' }} /> {/* Icon with size */}
+                 Resume
+              </Button>
             </OverlayTrigger>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
       {/* Popup Components */}
-      {activePopup === 'projects' && <ProjectsPopup isOpen onClose={handlePopupClose} />}
+      {/* {activePopup === 'projects' && <ProjectsPopup isOpen onClose={handlePopupClose} />} */}
+      {activePopup === 'reflections' && <SkillsPopup isOpen onClose={handlePopupClose} />}
+      {/* {activePopup === 'about' && <AboutPopup isOpen onClose={handlePopupClose} />} */}
     </>
   );
 };

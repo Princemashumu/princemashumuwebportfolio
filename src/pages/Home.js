@@ -17,9 +17,7 @@ import {
 } from 'react-icons/fa';
 import Lottie from 'lottie-react';
 import animationData1 from '../assets/anime7.json';
-import animationData2 from '../assets/anime8.json';
 import Splash from '../components/Splash';
-import Projects from './Projects'; // Import the Projects component
 import Me from '../assets/ME.png';
 
 
@@ -29,66 +27,12 @@ const MotionBox = motion(Box);
 const colors = {
   backgroundPrimary: 'gray.900',
   primaryText: 'white',
-  accent: '#800080', // Purple
+  accent: '#9dd5d4 ', // Purple
   secondaryAccent: '#9dd5d4', // Light teal
   linkHover: 'teal.500',
   linkBgHover: 'purple.600',
   linkBg: 'teal.500',
   border: '#9dd5d4',
-};
-
-// Animation variants for individual letters
-const letterVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: {
-      duration: 5
-    }
-  }
-};
-
-// Animation variant for the container
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.5,
-      repeat: Infinity,
-      repeatDelay: 10
-    }
-  }
-};
-
-const AnimatedText = ({ text }) => {
-  return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-      style={{ display: 'flex', gap: '10px' }}
-    >
-      {text.split('').map((char, index) => (
-        <motion.span
-          key={index}
-          variants={letterVariants}
-          style={{
-            display: 'inline-block',
-            fontWeight: "500",
-            fontSize: "60px",
-            color: colors.secondaryAccent,
-            fontFamily: "Anta, sans-serif",
-            letterSpacing: "10px"
-          }}
-        >
-          {char}
-        </motion.span>
-      ))}
-    </motion.div>
-  );
 };
 
 const Home = () => {
@@ -145,7 +89,7 @@ const Home = () => {
                 href={social.href}
                 isExternal
                 aria-label={social.label}
-                _hover={{ color: colors.linkHover, bg: colors.linkBgHover }}
+                _hover={{ color: colors.linkHover, bg: colors.accent }}
                 p={2}
                 border={`1px solid ${colors.border}`}
                 borderRadius="25px"
@@ -185,24 +129,30 @@ const Home = () => {
       mb={5}
       color={colors.primaryText}
       letterSpacing="5px"
+      
+      
     >
-      <Text as="span" color={colors.accent}>Hi,</Text> I am a Software Engineer.
+      <Text as="span" color={colors.accent} >Hi,</Text> I am a Software Engineer.
     </Heading>
   </MotionBox>
 
   <Box
-    mt={6}
-    fontFamily="Anta, sans-serif"
-    fontSize="lg"
-    lineHeight="1.8"
-    letterSpacing="1.5px"
-    p={6}
-    borderRadius="md"
-    border={`1px solid ${colors.border}`}
-    boxShadow="lg"
-    // bg="linear-gradient(to bottom, #f8f9fa, #e9ecef)" // Subtle gradient for modern look
-    color={colors.primaryText}
-  >
+  mt={6}
+  fontFamily="Anta, sans-serif"
+  fontSize="lg"
+  lineHeight="1.8"
+  letterSpacing="1.5px"
+  p={5}
+  marginRight="9%"
+  borderRadius="md"
+  border={`0.5px solid ${colors.border}`} // Default border
+  borderRight={`10px solid purple`} // Custom purple border on the right
+  borderBottom={`10px solid purple`} // Custom light teal border on the bottom
+  boxShadow="lg"
+  paddingLeft="2%"
+  // bg="linear-gradient(to bottom, #f8f9fa, #e9ecef)" // Subtle gradient for modern look
+  color={colors.primaryText}
+>
   <Text mb={3}>
       <strong style={{ color: colors.accent }}>Full Name:</strong> Prince Ngwako Mashumu
     </Text>
@@ -216,8 +166,15 @@ const Home = () => {
       <strong style={{ color: colors.accent }}>Contact Information:</strong> princengwakomashumu@gmail.com, 0682606328
     </Text>
     <Text>
-      <strong style={{ color: colors.accent }}>Date:</strong> {new Date().toLocaleDateString()}
-    </Text>
+  <strong style={{ color: colors.accent }}>Date:</strong>{" "}
+  {new Date().toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "short", // Displays the short name of the month
+    year: "numeric",
+  })}
+</Text>
+
+
 </Box>
 </Box>
 {/* </MotionBox> */}
@@ -245,13 +202,14 @@ const Home = () => {
          {/* Small circle on the right side */}
          <Box
           position="fixed"
-          right="2.5%"
-          top="62.9%"
+          right="1.1%"
+          top="63.9%"
           bottom="10%"
           zIndex="3"
           display="flex"
           justifyContent="center"
           alignItems="center"
+          borderRight={`4px solid ${colors.secondaryAccent}`}
         >
           <motion.div
             animate={{ y: [0, 20, 0] }}
@@ -260,7 +218,7 @@ const Home = () => {
             <Box
               width="30px"
               height="30px"
-              bg={colors.secondaryAccent}
+              bg="{colors.secondaryAccent}"
               borderRadius="50%"
               display="block"
             />
@@ -269,7 +227,7 @@ const Home = () => {
           <Box
             width="450px"
             height="450px"
-            left="95%" 
+            left="90%" 
             top="60%"
             borderRadius="50%"
             // border="4px solid white"

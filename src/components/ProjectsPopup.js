@@ -5,7 +5,7 @@ import IndividualProjects from './IndividualProjects';
 import GroupProjects from './GroupProjects';
 
 // Import the JSON file
-import projectsData from './projects.json';
+import projectsData from './data/projects.json';
 
 const ProjectsPopup = ({ isOpen, onClose }) => {
   const [individualProjects, setIndividualProjects] = useState([]);

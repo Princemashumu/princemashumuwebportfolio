@@ -6,6 +6,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/letter-p.png';
 import SkillsPopup from '../components/SkillsPopup';
 import SplashLoader from '../components/Splash';
+import { BsDownload } from 'react-icons/bs';
+
 
 const NavbarComponent = () => {
   const [activePopup, setActivePopup] = useState(null); // Single state for managing the active popup
@@ -79,11 +81,16 @@ const NavbarComponent = () => {
                   borderRadius: '25px',
                   fontFamily: 'Anta, sans-serif',
                   fontWeight: '400',
+                  padding: '10px 20px', // Add padding for better spacing
+                  display: 'flex', // Ensure proper alignment
+                  alignItems: 'center',
+                  gap: '8px', // Space between icon and text
                 }}
                 onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#993399')}
                 onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#800080')}
               >
-                <i className="bi bi-download"></i> Download Resume
+                <BsDownload size={20} style={{ marginRight: '5px' }} /> {/* Icon with size */}
+                 Resume
               </Button>
             </OverlayTrigger>
           </Navbar.Collapse>

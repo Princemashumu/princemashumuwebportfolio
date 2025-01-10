@@ -98,7 +98,7 @@ const NavbarComponent = () => {
       </Navbar>
 
       {/* Popup Components */}
-      {activePopup === 'projects' && <ProjectsPopup isOpen onClose={handlePopupClose} />}
+      {activePopup === 'goals' && <ProjectsPopup isOpen onClose={handlePopupClose} />}
     </>
   );
 };
