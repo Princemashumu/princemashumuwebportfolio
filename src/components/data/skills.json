@@ -1,0 +1,57 @@
+{
+    "DesignSkills": [
+      {
+        "skill": "Figma",
+        "level": "Advanced",
+        "notes": "Created wireframes and prototypes.",
+        "icon": "FaFigma"
+      }
+    ],
+    "FrontendSkills": [
+      {
+        "skill": "HTML",
+        "level": "Advanced",
+        "notes": "Used in multiple projects.",
+        "icon": "FaHtml5"
+      },
+      {
+        "skill": "CSS",
+        "level": "Advanced",
+        "notes": "Styled responsive layouts.",
+        "icon": "FaCss3Alt"
+      },
+      {
+        "skill": "JavaScript",
+        "level": "Advanced",
+        "notes": "Built dynamic web applications.",
+        "icon": "FaJs"
+      },
+      {
+        "skill": "React",
+        "level": "Advanced",
+        "notes": "Developed modern web apps.",
+        "icon": "FaReact"
+      }
+    ],
+    "BackendSkills": [
+      {
+        "skill": "Node.js",
+        "level": "Advanced",
+        "notes": "Built RESTful APIs.",
+        "icon": "FaNodeJs"
+      },
+      {
+        "skill": "Express.js",
+        "level": "Advanced",
+        "notes": "Created server-side routes.",
+        "icon": "SiExpress"
+      },
+      {
+        "skill": "MongoDB",
+        "level": "Intermediate",
+        "notes": "Designed and queried NoSQL databases.",
+        "icon": "SiMongodb"
+      }
+    ]
+  }
+  

@@ -1,0 +1,86 @@
+{
+  "individualProjects": [
+    {
+      "title": "Project Name 1",
+      "description": "A brief overview of the project.",
+      "techStack": ["HTML", "CSS", "JavaScript"],
+      "keyFeatures": ["Responsive Design", "Dynamic Content"],
+      "challenges": "Handled API integration and asynchronous calls.",
+      "link": "https://github.com/project1"
+    },
+    {
+      "title": "Project Name 2",
+      "description": "E-commerce platform with product filtering.",
+      "techStack": ["React", "Node.js", "MongoDB"],
+      "keyFeatures": ["User Authentication", "Shopping Cart"],
+      "challenges": "Optimized database queries for performance.",
+      "link": "https://github.com/project2"
+    },
+    {
+      "title": "Project Name 3",
+      "description": "Weather forecasting app with real-time updates.",
+      "techStack": ["React", "API Integration", "CSS"],
+      "keyFeatures": ["Location-based Weather", "Hourly Forecast"],
+      "challenges": "Integrated third-party weather API and optimized state management.",
+      "link": "https://github.com/project3"
+    },
+    {
+      "title": "Project Name 4",
+      "description": "A mobile-responsive portfolio website.",
+      "techStack": ["HTML", "CSS", "JavaScript"],
+      "keyFeatures": ["Custom Animations", "Smooth Scrolling"],
+      "challenges": "Ensured cross-browser compatibility and mobile responsiveness.",
+      "link": "https://github.com/project4"
+    },
+    {
+      "title": "Project Name 5",
+      "description": "Task tracker with real-time notifications.",
+      "techStack": ["Vue.js", "Vuex", "Firebase"],
+      "keyFeatures": ["Real-Time Sync", "Task Prioritization"],
+      "challenges": "Implemented Firebase integration for real-time updates.",
+      "link": "https://github.com/project5"
+    }
+  ],
+  "groupProjects": [
+    {
+      "title": "Group Project 1",
+      "description": "A team project for task management.",
+      "techStack": ["React", "Express", "Firebase"],
+      "keyFeatures": ["Collaboration Tools", "Notifications"],
+      "challenges": "Implemented real-time updates using Firebase.",
+      "link": "https://github.com/group-project1"
+    },
+    {
+      "title": "Group Project 2",
+      "description": "Social media platform for sharing content.",
+      "techStack": ["React", "Node.js", "PostgreSQL"],
+      "keyFeatures": ["Like/Comment System", "User Profiles"],
+      "challenges": "Scalable backend with PostgreSQL optimization.",
+      "link": "https://github.com/group-project2"
+    },
+    {
+      "title": "Group Project 3",
+      "description": "Project management tool with task assignment.",
+      "techStack": ["Angular", "Node.js", "MongoDB"],
+      "keyFeatures": ["Task Scheduling", "Real-time Chat"],
+      "challenges": "Deployed application with user authentication and role management.",
+      "link": "https://github.com/group-project3"
+    },
+    {
+      "title": "Group Project 4",
+      "description": "Budget tracking and expense management system.",
+      "techStack": ["React", "Redux", "Firebase"],
+      "keyFeatures": ["Expense Tracking", "Budget Visualization"],
+      "challenges": "Integrated charts and Firebase for user authentication.",
+      "link": "https://github.com/group-project4"
+    },
+    {
+      "title": "Group Project 5",
+      "description": "Online marketplace for buying and selling products.",
+      "techStack": ["React", "Node.js", "MongoDB"],
+      "keyFeatures": ["Product Listings", "User Reviews"],
+      "challenges": "Implemented search and filtering features for a better user experience.",
+      "link": "https://github.com/group-project5"
+    }
+  ]
+}
