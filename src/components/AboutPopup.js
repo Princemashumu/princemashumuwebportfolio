@@ -1,24 +1,7 @@
-// AboutPopup.js
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import NavbarComponent from './AboutNavbar';
-import {
-  Box,
-  Heading,
-  Text,
-  Link,
-} from '@chakra-ui/react';
+import { Box, Heading, Text, Button } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import {
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedin,
-  FaGithub,
-  FaWhatsapp,
-} from 'react-icons/fa';
-
-
 
 const colors = {
   backgroundPrimary: 'black',
@@ -31,74 +14,61 @@ const colors = {
   border: '#9dd5d4',
 };
 
+const MotionBox = motion(Box);
 
 const AboutPopup = ({ isOpen, onClose }) => {
   return (
     isOpen && (
-      <div
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100vw',
-          height: '100vh',
-          backgroundColor: 'rgba(0, 0, 0, 3)',
-          color: 'white',
-          zIndex: 1050,
-          overflowY: 'auto',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
+      <MotionBox
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3 }}
+        position="fixed"
+        top="0"
+        left="0"
+        width="100vw"
+        height="100vh"
+        backgroundColor="rgba(0, 0, 0, 1)"
+        color={colors.primaryText}
+        zIndex="1050"
+        overflowY="auto"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
       >
-        <NavbarComponent/>
-        <div style={{ maxWidth: '90%', padding: '20px', textAlign: 'center' }}>
-
-
-        <Box
-          position="fixed"
-          top="55%"
-          left="3%"
-          transform="translateY(-50%)"
-          zIndex="2"
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          color="#70d6ff"
-          gap={5}
-        >
-          {[{ href: 'https://github.com', label: 'GitHub', icon: <FaGithub size="30" /> },
-            { href: 'https://www.linkedin.com', label: 'LinkedIn', icon: <FaLinkedin size="30" /> },
-            { href: 'https://www.facebook.com', label: 'Facebook', icon: <FaFacebook size="30" /> },
-            { href: 'https://www.twitter.com', label: 'Twitter', icon: <FaTwitter size="30" /> },
-            { href: 'https://www.instagram.com', label: 'Instagram', icon: <FaInstagram size="30" /> },
-            { href: 'https://wa.me/your-number', label: 'WhatsApp', icon: <FaWhatsapp size="30" /> },
-          ].map((social, index) => (
-            <motion.div key={index} whileHover={{ scale: 1.2, rotate: 10 }} whileTap={{ scale: 0.9 }}>
-              <Link
-                href={social.href}
-                isExternal
-                aria-label={social.label}
-                _hover={{ color: colors.linkHover, bg: colors.linkBgHover }}
-                p={2}
-                border={`1px solid ${colors.border}`}
-                borderRadius="25px"
-                bg={colors.linkBg}
-              >
-                {social.icon}
-              </Link>
-            </motion.div>
-          ))}
-        </Box>
-
-
-          <h2>About Me</h2>
-          <p>Here’s some information about you. The popup now fills the viewport!</p>
-          <Button variant="secondary" onClick={onClose}>
+        <NavbarComponent />
+        <Box maxWidth="90%" p="5" textAlign="center">
+          <Heading as="h2" fontSize="2xl" mb="4">
+            About Me
+          </Heading>
+          <Text fontSize="lg" mb="6">
+            Here’s some information about you. The popup now fills the viewport!
+          </Text>
+          {/* Chakra UI Button with consistent styling */}
+          <Button
+            onClick={onClose}
+            bg={colors.accent}
+            color="white"
+            size="lg"
+            borderRadius="full"
+            px={8}
+            py={4}
+            fontSize="lg"
+            fontWeight="bold"
+            _hover={{
+              bg: colors.linkBgHover,
+            }}
+            _active={{
+              bg: colors.linkBg,
+            }}
+            _focus={{
+              outline: 'none',
+            }}
+          >
             Close
           </Button>
-        </div>
-      </div>
+        </Box>
+      </MotionBox>
     )
   );
 };
