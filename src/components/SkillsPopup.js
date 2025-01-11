@@ -120,7 +120,7 @@ const SkillsPopup = ({ isOpen, onClose }) => {
         alignItems="center"
       >
         <NavbarComponent />
-        <Box maxWidth="90%" p="5" textAlign="center" zIndex="2" position="relative" top="26%" left="1%">
+        <Box maxWidth="90%" p="5" textAlign="center" zIndex="2" position="relative" top="23%" left="1%">
           <Lottie
             animationData={animationData1}
             loop
@@ -162,9 +162,25 @@ const SkillsPopup = ({ isOpen, onClose }) => {
             </>
           )}
           <Divider my="8" borderColor="purple.500" />
-          <Button variant="secondary" onClick={onClose}>
-            Close
-          </Button>
+          <Button
+          onClick={onClose}
+          bg='#800080'
+          color="white"
+          size="lg"
+          mt={6}
+          mx="auto"
+          display="block"
+          _hover={{
+            bg:  'purple.600',
+          }}
+          _active={{
+            bg: '#800080',
+          }}
+          borderRadius="full"
+          px={8}
+        >
+          Close
+        </Button>
         </Box>
 {/* Modal for skill details */}
 {selectedSkill && (

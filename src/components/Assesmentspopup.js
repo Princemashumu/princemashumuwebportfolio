@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Box, Heading, Text } from '@chakra-ui/react';
 import NavbarComponent from './AssesmentsNavbar';
-import { Box, Heading, Text } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
+// Define color constants for easy management
 const colors = {
   backgroundPrimary: 'black.900',
   primaryText: 'white',
@@ -29,7 +29,7 @@ const AssesmentsPopup = ({ isOpen, onClose }) => {
         left="0"
         width="100vw"
         height="100vh"
-        backgroundColor=' rgb(23,25,35)'
+        backgroundColor="rgb(23,25,35)"
         color={colors.primaryText}
         zIndex="1050"
         overflowY="auto"
@@ -39,14 +39,33 @@ const AssesmentsPopup = ({ isOpen, onClose }) => {
       >
         <NavbarComponent />
         <Box maxWidth="90%" p="5" textAlign="center" position="relative">
-         
           <Heading as="h2" fontSize="2xl" mb="4">
             Skills
           </Heading>
           <Text fontSize="lg" mb="6">
-            This is where you can showcase your Assesments. Now displayed fullscreen!
+            This is where you can showcase your Assessments. Now displayed fullscreen!
           </Text>
-          <Button variant="secondary" onClick={onClose}>
+          {/* Chakra Button with styling */}
+          <Button
+            onClick={onClose}
+            bg={colors.accent}
+            color="white"
+            size="lg"
+            borderRadius="full"
+            px={8}
+            py={4}
+            fontSize="lg"
+            fontWeight="bold"
+            _hover={{
+              bg: colors.linkBgHover,
+            }}
+            _active={{
+              bg: colors.linkBg,
+            }}
+            _focus={{
+              outline: 'none',
+            }}
+          >
             Close
           </Button>
         </Box>

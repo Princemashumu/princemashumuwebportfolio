@@ -146,6 +146,8 @@ const Home = () => {
   marginRight="9%"
   borderRadius="md"
   border={`0.5px solid ${colors.border}`} // Default border
+  borderLeft="none" // No border on the left
+  borderTop="none" // No border on the top
   borderRight={`10px solid purple`} // Custom purple border on the right
   borderBottom={`10px solid purple`} // Custom light teal border on the bottom
   boxShadow="lg"
@@ -202,8 +204,8 @@ const Home = () => {
          {/* Small circle on the right side */}
          <Box
           position="fixed"
-          right="1.1%"
-          top="63.9%"
+          right="2.2%"
+          top="62%"
           bottom="10%"
           zIndex="3"
           display="flex"
