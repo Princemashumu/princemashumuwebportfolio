@@ -1,86 +1,198 @@
 {
   "individualProjects": [
+    
+    
     {
-      "title": "Project Name 1",
-      "description": "A brief overview of the project.",
+      "title": "Weather App",
+      "description": "Real-time weather updates, location-based forecast",
+      "techStack": ["React","Material-UI","API","React Router","Node.js"], 
+      "keyFeatures": ["Real-Time Weather","Date Display","Location-based Forecast"],
+      "challenges": "Working with open weather API and also understanding the API",
+      "githubLink": "https://github.com/Princemashumu/Weather-APP"
+    },
+    {
+      "title": "To Do List App",
+      "description": "Allowing users to manage their tasks effectively",
+      "techStack": ["Node.js ","SQLite3"], 
+      "keyFeatures": ["User Authentication","Task Prioritization","Task Filtering"],
+      "challenges": "Implementing Sqlite3 and also understanding the SQLite3 module",
+      "githubLink": "https://github.com/Princemashumu/To-Do-List-App"
+    }
+    ,
+    {
+      "title": "Birthday Card App",
+      "description": "Allowing users to create custom birthday cards ",
+      "techStack": ["React Native","Expo","Expo Media Library","React Native View Shot"], 
+      "keyFeatures": ["Customizable Cards","Save Cards to Gallery","Cross-Platform"],
+      "challenges": "Implementing view shot and also understanding the media library",
+      "githubLink": "https://github.com/Princemashumu/BirthdayCard_app"
+    }
+    ,
+    {
+      "title": "Voice Recording App ",
+      "description": "Record, play, and manage audio memos",
+      "techStack": ["React Native","Expo","Expo Audio","AsyncStorage","Material-UI Icons","Animated API"], 
+      "keyFeatures": ["Record Audio","Playback Controls","Cross-Platform","Delete Recordings"],
+      "challenges": "Working with Expo and AsyncStorage",
+      "githubLink": "https://github.com/Princemashumu/Voice-Memos"
+    },
+    {
+      "title": "Gallery App",
+      "description": "Capture and display images with my app",
+      "techStack": ["React Native","Expo"], 
+      "keyFeatures": ["Capture Images","Display Images"],
+      "challenges": "Working with Expo and also understanding the camera module",
+      "githubLink": "https://github.com/Princemashumu/GalleryApplication"
+    }
+    ,
+
+    {
+      "title": "Hotel Booking App",
+      "description": "Allows users to view room details, make reservations",
+      "techStack": [" ReactJS", "Material-UI","Firebase","React Hooks"], 
+      "keyFeatures": ["User Authentication", "Room Reservation","Favorites","Responsive Design"],
+      "challenges": "Working with firebase and also understanding the firebase authentication",
+      "githubLink": "https://github.com/Princemashumu/HOTEL-APPLICATION"
+    }
+    ,
+    {
+      "title": "Hotel App CMS",
+      "description": "Allows admins to CRUD room details,reservations",
+      "techStack": [" ReactJS", "Material-UI","Firebase","React Hooks"], 
+      "keyFeatures": ["User Authentication", "Room Reservation","Favorites","Responsive Design"],
+      "challenges": "Working with firebase and also understanding the firebase authentication",
+      "githubLink": "https://github.com/Princemashumu/hotelappcms"
+    }
+    ,
+    {
+      "title": "UI Challange",
+      "description": "Mimicking another UI with codes.",
       "techStack": ["HTML", "CSS", "JavaScript"],
       "keyFeatures": ["Responsive Design", "Dynamic Content"],
-      "challenges": "Handled API integration and asynchronous calls.",
-      "link": "https://github.com/project1"
+      "challenges": "Implementing a grid for the first time and also not using flexbox",
+      "githubLink": "https://github.com/Princemashumu/UI-Challenge-Task-1-CodeTribe-2024"
     },
     {
-      "title": "Project Name 2",
-      "description": "E-commerce platform with product filtering.",
-      "techStack": ["React", "Node.js", "MongoDB"],
-      "keyFeatures": ["User Authentication", "Shopping Cart"],
-      "challenges": "Optimized database queries for performance.",
-      "link": "https://github.com/project2"
+      "title": "Shopping List App",
+      "description": "Built with Redux for state management",
+      "techStack": ["ReactJS","Redux","JSON Server"], 
+      "keyFeatures": ["State management using Redux.","CRUD Operations"," Manage multiple shopping lists","Authentication"],
+      "challenges": "State management using Redux",
+      "githubLink": "https://github.com/Princemashumu/shoppinglist"
     },
     {
-      "title": "Project Name 3",
-      "description": "Weather forecasting app with real-time updates.",
-      "techStack": ["React", "API Integration", "CSS"],
-      "keyFeatures": ["Location-based Weather", "Hourly Forecast"],
-      "challenges": "Integrated third-party weather API and optimized state management.",
-      "link": "https://github.com/project3"
+      "title": "Node.js HTTP Server",
+      "description": "This is a simple HTTP server built using Node.js.",
+      "techStack": ["JavaScript", "Node.js"],
+      "keyFeatures": ["POST Requests", "GET Requests"],
+      "challenges": "Error Handling and also understanding the HTTP module",
+      "githubLink": "https://github.com/Princemashumu/BasicNodeJsServer"
     },
     {
-      "title": "Project Name 4",
-      "description": "A mobile-responsive portfolio website.",
-      "techStack": ["HTML", "CSS", "JavaScript"],
-      "keyFeatures": ["Custom Animations", "Smooth Scrolling"],
-      "challenges": "Ensured cross-browser compatibility and mobile responsiveness.",
-      "link": "https://github.com/project4"
+      "title": "Online Recipe App",
+      "description": "Create, read, update, and delete online recipes.",
+      "techStack": ["ReactJS", "JSON Server", "Node.js","Material-UI"],
+      "keyFeatures": ["User Authentication", "CRUD Operations","Search Functionality","Responsive Design"],
+      "challenges": "Workinng with user authentication and also understanding the JSON server",
+      "githubLink": "https://github.com/Princemashumu/Online-Recipe"
     },
     {
-      "title": "Project Name 5",
-      "description": "Task tracker with real-time notifications.",
-      "techStack": ["Vue.js", "Vuex", "Firebase"],
-      "keyFeatures": ["Real-Time Sync", "Task Prioritization"],
-      "challenges": "Implemented Firebase integration for real-time updates.",
-      "link": "https://github.com/project5"
+      "title": "Quiz Application",
+      "description": "A timed quiz with true/false questions",
+      "techStack": ["ReactJS", "Node.js", "JSON file","readline"],
+      "keyFeatures": ["Timed quiz", "Real-time feedback on answers","Asynchronous question handling"],
+      "challenges": "Understanding asynchronous functions and also working with the readline module",
+      "githubLink": "https://github.com/Princemashumu/quizapplication"
+    },
+    {
+      "title": "File Manager and REST API",
+      "description": "Basic File Manager to manage a shopping list.",
+      "techStack": ["Node.js (v12+)", "Postman","HTTP module"],
+      "keyFeatures": ["CRUD Operations", "Endpoints"],
+      "challenges": "Working with endpoints and also understanding the file system module",
+      "githubLink": "https://github.com/Princemashumu/File-Manager-and-a-REST-API"
+    },
+    {
+      "title": "Book Directory API",
+      "description": "A simple API for managing a book directory.",
+      "techStack": ["Node.js (v12+)", "Postman","HTTP module"], 
+      "keyFeatures": ["CRUD Operations", "Endpoints"],
+      "challenges": "Working with endpoints and also understanding the HTTP module",
+      "githubLink": "https://github.com/Princemashumu/book-directory"
     }
+    ,
+    {
+      "title": "Employee Management System",
+      "description": "Manage employee data",
+      "techStack": ["Node.js (v12+)", "ReactJS","JSON Server"], 
+      "keyFeatures": ["CRUD Operations", "Endpoints"],
+      "challenges": "Cannot read properties of null (reading 'useContext')",
+      "githubLink": "https://github.com/Princemashumu/REGISTER-WEBAPPLICATION"
+    }
+    ,
+    {
+      "title": "Simple Node.js",
+      "description": "A simple Node.js server built using Express",
+      "techStack": ["Node.js (v12+)", "Express"], 
+      "keyFeatures": ["Deploying on Vercel", "GET Requests"],
+      "challenges": "Deploying on Vercel and also understanding the Express module",
+      "githubLink": "https://github.com/Princemashumu/SimpleNodejs"
+    }
+    ,
+    {
+      "title": "Card Guessing Game",
+      "description": "A small game for matching cards",
+      "techStack": ["ReactJs","Material-UI"], 
+      "keyFeatures": ["Matching Cards", "Timer"],
+      "challenges": "None",
+      "githubLink": "https://github.com/Princemashumu/Card-Guessing-Game"
+    }
+    ,
+    {
+      "title": "Codetribe MongoDB Setup",
+      "description": "Adding collections and inserting documents",
+      "techStack": ["MongoDB","MongoDB shell"], 
+      "keyFeatures": ["Creating Database","Creating Collections ","Inserting Documents"],
+      "challenges": "Implenting MongoDB shell commands",
+      "githubLink": "https://github.com/Princemashumu/mongoDB"
+    }
+    ,
+    {
+      "title": "Library Management System",
+      "description": "Allows users to perform various CRUD operations",
+      "techStack": ["MongoDB","MongoDB shell"], 
+      "keyFeatures": ["Create Database ","Create Collections","Inserting Documents"],
+      "challenges": "Understanding mongoDB shell commands",
+      "githubLink": "https://github.com/Princemashumu/Library-Management-System"
+    }
+    ,
+    {
+      "title": "Recipe App RESTful API",
+      "description": " It allows users to manage recipes",
+      "techStack": ["Node.js", "Express", "MongoDB","MongoDB shell"], 
+      "keyFeatures": ["Retrieve all recipes with pagination.","Retrieve a recipe by ID."],
+      "challenges": "None",
+      "githubLink": "https://github.com/Princemashumu/restfulapi_recipeapp"
+    }
+    ,
+    {
+      "title": "Payment Gateway Integration",
+      "description": "Intergrating a payment gateway",
+      "techStack": ["ReactJS","Paypal Developer"], 
+      "keyFeatures": ["Payment Gateway Integration"],
+      "challenges": "None",
+      "githubLink": "https://github.com/Princemashumu/PaymentGateway"
+    }
+    
   ],
   "groupProjects": [
     {
-      "title": "Group Project 1",
-      "description": "A team project for task management.",
-      "techStack": ["React", "Express", "Firebase"],
-      "keyFeatures": ["Collaboration Tools", "Notifications"],
+      "title": "MPE Dining Table",
+      "description": "Book a table at an ideal restaurant",
+      "techStack": ["React","Firebase","React native","Expo","Material-UI Icons","Node.js "],
+      "keyFeatures": ["Book a table", "Notifications","Real-time updates","User Authentication","Payment Gateway Integration"],
       "challenges": "Implemented real-time updates using Firebase.",
-      "link": "https://github.com/group-project1"
-    },
-    {
-      "title": "Group Project 2",
-      "description": "Social media platform for sharing content.",
-      "techStack": ["React", "Node.js", "PostgreSQL"],
-      "keyFeatures": ["Like/Comment System", "User Profiles"],
-      "challenges": "Scalable backend with PostgreSQL optimization.",
-      "link": "https://github.com/group-project2"
-    },
-    {
-      "title": "Group Project 3",
-      "description": "Project management tool with task assignment.",
-      "techStack": ["Angular", "Node.js", "MongoDB"],
-      "keyFeatures": ["Task Scheduling", "Real-time Chat"],
-      "challenges": "Deployed application with user authentication and role management.",
-      "link": "https://github.com/group-project3"
-    },
-    {
-      "title": "Group Project 4",
-      "description": "Budget tracking and expense management system.",
-      "techStack": ["React", "Redux", "Firebase"],
-      "keyFeatures": ["Expense Tracking", "Budget Visualization"],
-      "challenges": "Integrated charts and Firebase for user authentication.",
-      "link": "https://github.com/group-project4"
-    },
-    {
-      "title": "Group Project 5",
-      "description": "Online marketplace for buying and selling products.",
-      "techStack": ["React", "Node.js", "MongoDB"],
-      "keyFeatures": ["Product Listings", "User Reviews"],
-      "challenges": "Implemented search and filtering features for a better user experience.",
-      "link": "https://github.com/group-project5"
+      "githubLink": "https://github.com/orgs/MPE-dining-table/repositories"
     }
   ]
 }
