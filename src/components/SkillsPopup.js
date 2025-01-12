@@ -68,6 +68,8 @@ const SkillsPopup = ({ isOpen, onClose }) => {
       borderRadius="lg"
       boxShadow="lg"
       p="5"
+      borderRight={`5px solid purple`} // Custom purple border on the right
+      borderBottom={`5px solid purple`} 
       backgroundColor="gray.800"
       color="white"
       textAlign="center"
@@ -86,6 +88,8 @@ const SkillsPopup = ({ isOpen, onClose }) => {
       borderWidth="1px"
       borderRadius="lg"
       boxShadow="lg"
+      borderRight={`5px solid purple`} // Custom purple border on the right
+      borderBottom={`5px solid purple`} 
       p="5"
       backgroundColor="gray.700"
       textAlign="center"

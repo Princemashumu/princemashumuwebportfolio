@@ -77,12 +77,12 @@ const Home = () => {
           color="#70d6ff"
           gap={5}
         >
-          {[{ href: 'https://github.com', label: 'GitHub', icon: <FaGithub size="30" /> },
-            { href: 'https://www.linkedin.com', label: 'LinkedIn', icon: <FaLinkedin size="30" /> },
-            { href: 'https://www.facebook.com', label: 'Facebook', icon: <FaFacebook size="30" /> },
-            { href: 'https://www.twitter.com', label: 'Twitter', icon: <FaTwitter size="30" /> },
-            { href: 'https://www.instagram.com', label: 'Instagram', icon: <FaInstagram size="30" /> },
-            { href: 'https://wa.me/your-number', label: 'WhatsApp', icon: <FaWhatsapp size="30" /> },
+          {[{ href: 'https://github.com/Princemashumu', label: 'GitHub', icon: <FaGithub size="30" /> },
+            { href: 'https://www.linkedin.com/in/prince-ngwako-mashumu-77977924b/', label: 'LinkedIn', icon: <FaLinkedin size="30" /> },
+            { href: 'https://www.facebook.com/princengwakomashumu', label: 'Facebook', icon: <FaFacebook size="30" /> },
+            { href: 'https://www.twitter.com/princemashumu', label: 'Twitter', icon: <FaTwitter size="30" /> },
+            { href: 'https://www.instagram.com/princengwakomashumu', label: 'Instagram', icon: <FaInstagram size="30" /> },
+            { href: 'https://wa.me/0682606328', label: 'WhatsApp', icon: <FaWhatsapp size="30" /> },
           ].map((social, index) => (
             <motion.div key={index} whileHover={{ scale: 1.2, rotate: 10 }} whileTap={{ scale: 0.9 }}>
               <Link

@@ -41,7 +41,7 @@ const ProjectsPopup = ({ isOpen, onClose }) => {
           bg='#800080'
           color="white"
           size="lg"
-          mt={6}
+          mt={3}
           mx="auto"
           display="block"
           _hover={{
