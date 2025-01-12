@@ -72,10 +72,18 @@ const NavbarComponent = () => {
           key={link}
           style={{
             color: 'skyblue',
-            transition: 'color 0.3s ease',
+            textDecoration: 'none',
+            transition: 'color 0.3s ease, border-bottom 0.3s ease',
+            borderBottom: '2px solid transparent',
           }}
-          onMouseOver={(e) => (e.currentTarget.style.color = '#b800ff ')}
-          onMouseOut={(e) => (e.currentTarget.style.color = 'skyblue')}
+          onMouseOver={(e) => {
+            e.currentTarget.style.color = '#b800ff';
+            e.currentTarget.style.borderBottom = '2px solid purple';
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.color = 'skyblue';
+            e.currentTarget.style.borderBottom = '2px solid transparent';
+          }}
           onClick={() => handleNavClick(link)}
         >
           {link.charAt(0).toUpperCase() + link.slice(1)} {/* Capitalize the first letter */}
@@ -86,10 +94,18 @@ const NavbarComponent = () => {
     <Nav.Link
       style={{
         color: 'skyblue',
-        transition: 'color 0.3s ease',
+        textDecoration: 'none',
+        transition: 'color 0.3s ease, border-bottom 0.3s ease',
+        borderBottom: '2px solid transparent',
       }}
-      onMouseOver={(e) => (e.currentTarget.style.color = 'purple')}
-      onMouseOut={(e) => (e.currentTarget.style.color = 'skyblue')}
+      onMouseOver={(e) => {
+        e.currentTarget.style.color = 'purple';
+        e.currentTarget.style.borderBottom = '2px solid purple';
+      }}
+      onMouseOut={(e) => {
+        e.currentTarget.style.color = 'skyblue';
+        e.currentTarget.style.borderBottom = '2px solid transparent';
+      }}
       onClick={handlePopupClose}
     >
       Close {activePopup}
