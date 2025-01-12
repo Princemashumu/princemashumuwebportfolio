@@ -19,7 +19,7 @@ import {
   Link,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons';
+import { MdNavigateNext, MdArrowBackIos } from "react-icons/md";
 
 
 const GroupProjects = ({ projects }) => {
@@ -73,7 +73,7 @@ const GroupProjects = ({ projects }) => {
       <Box display="flex" alignItems="center" justifyContent="center" gap="10px">
         <IconButton
           aria-label="Previous"
-          icon={<ArrowLeftIcon />}
+          icon={<MdArrowBackIos />}
           onClick={handlePrev}
           isDisabled={currentIndex === 0}
         />
@@ -91,6 +91,8 @@ const GroupProjects = ({ projects }) => {
                 boxShadow="lg"
                 cursor="pointer"
                 _hover={{ boxShadow: 'xl' }}
+                borderRight={`5px solid purple`} // Custom purple border on the right
+  borderBottom={`5px solid purple`}
               >
                 <CardBody>
                   <Text fontWeight="bold" fontSize="md" color="purple.600" isTruncated>
@@ -106,7 +108,7 @@ const GroupProjects = ({ projects }) => {
         </SimpleGrid>
         <IconButton
           aria-label="Next"
-          icon={<ArrowRightIcon />}
+          icon={<MdNavigateNext />}
           onClick={handleNext}
           isDisabled={currentIndex + itemsPerPage >= projects.length}
         />
@@ -205,15 +207,6 @@ const GroupProjects = ({ projects }) => {
           fontSize="sm"
         >
           View on GitHub
-        </Link>
-        <Link
-          href={selectedProject.hostedLink}
-          isExternal
-          color="purple.500"
-          fontWeight="semibold"
-          fontSize="sm"
-        >
-          View Hosted
         </Link>
         <Button
           colorScheme="purple"

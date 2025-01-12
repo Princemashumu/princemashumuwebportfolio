@@ -18,7 +18,8 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
+import { MdNavigateNext, MdArrowBackIos } from "react-icons/md";
+
 
 const IndividualProjects = ({ projects }) => {
   const [currentIndex, setCurrentIndex] = useState(0); // Track the current starting index
@@ -82,7 +83,7 @@ const IndividualProjects = ({ projects }) => {
         {/* Left Arrow */}
         <IconButton
           aria-label="Previous"
-          icon={<ArrowLeftIcon />}
+          icon={<MdArrowBackIos />}
           onClick={handlePrev}
           isDisabled={currentIndex === 0}
         />
@@ -102,6 +103,8 @@ const IndividualProjects = ({ projects }) => {
                 boxShadow="lg"
                 cursor="pointer"
                 _hover={{ boxShadow: "xl" }}
+                borderRight={`5px solid purple`} // Custom purple border on the right
+  borderBottom={`5px solid purple`} 
               >
                 <CardBody>
                   <Heading as="h4" size="md" color="purple.600">
@@ -119,7 +122,7 @@ const IndividualProjects = ({ projects }) => {
         {/* Right Arrow */}
         <IconButton
           aria-label="Next"
-          icon={<ArrowRightIcon />}
+          icon={<MdNavigateNext />}
           onClick={handleNext}
           isDisabled={currentIndex + itemsPerPage >= projects.length}
         />
@@ -222,18 +225,6 @@ const IndividualProjects = ({ projects }) => {
           mr={4}
         >
           View on GitHub
-        </Link>
-
-        {/* Hosted Link */}
-        <Link
-          href={selectedProject.hostedLink} 
-          isExternal
-          color="purple.500" 
-          fontWeight="semibold" 
-          fontSize="sm"
-          mr={4}
-        >
-          View Hosted
         </Link>
 
         {/* Close Button */}
