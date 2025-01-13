@@ -60,3 +60,33 @@ To run this portfolio locally:
 1. **Clone the Repository**:  
    ```bash
    git clone https://github.com/Princemashumu/princemashumuwebportfolio.git
+
+## Navigate to the Project Directory:
+
+```
+cd portfolio
+```
+## Install Dependencies:
+
+```
+npm install
+```
+## Start the Development Server:
+
+```
+npm start
+```
+Open http://localhost:3000 in your browser.
+# Usage
+Explore the site to learn about me, my projects, and the technologies I work with. Use the contact section to reach out or download my resume directly from the website.
+
+# Contributing
+Contributions are welcome! If you have suggestions for improving my portfolio, feel free to open an issue or submit a pull request.
+
+# License
+This project is licensed under the MIT License.
+
+# Connect with Me
+- Email: princengwakomashumu@gmail.com
+- Phone: 068-260-6328
+- Location: Soweto, Johannesburg
