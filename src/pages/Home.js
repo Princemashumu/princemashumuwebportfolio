@@ -5,6 +5,7 @@ import {
   Text,
   Link,
   Image,
+  useBreakpointValue ,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import {
@@ -37,7 +38,11 @@ const colors = {
 
 const Home = () => {
   const [showSplash, setShowSplash] = useState(true);
- 
+ // Use useBreakpointValue at the top of the component
+ const iconSize = useBreakpointValue({ base: '20px', md: '20px' ,lg: '30px'});
+ const gapSize = useBreakpointValue({ base: 3, md: 5, lg: 5 });
+
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSplash(false);
@@ -65,41 +70,42 @@ const Home = () => {
           }}
         />
 
-        <Box
-          position="fixed"
-          top="55%"
-          left="3%"
-          transform="translateY(-50%)"
-          zIndex="2"
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          color="#70d6ff"
-          gap={5}
-        >
-          {[{ href: 'https://github.com/Princemashumu', label: 'GitHub', icon: <FaGithub size="30" /> },
-            { href: 'https://www.linkedin.com/in/prince-ngwako-mashumu-77977924b/', label: 'LinkedIn', icon: <FaLinkedin size="30" /> },
-            { href: 'https://www.facebook.com/princengwakomashumu', label: 'Facebook', icon: <FaFacebook size="30" /> },
-            { href: 'https://www.twitter.com/princemashumu', label: 'Twitter', icon: <FaTwitter size="30" /> },
-            { href: 'https://www.instagram.com/princengwakomashumu', label: 'Instagram', icon: <FaInstagram size="30" /> },
-            { href: 'https://wa.me/0682606328', label: 'WhatsApp', icon: <FaWhatsapp size="30" /> },
-          ].map((social, index) => (
-            <motion.div key={index} whileHover={{ scale: 1.2, rotate: 10 }} whileTap={{ scale: 0.9 }}>
-              <Link
-                href={social.href}
-                isExternal
-                aria-label={social.label}
-                _hover={{ color: colors.linkHover, bg: colors.accent }}
-                p={2}
-                border={`1px solid ${colors.border}`}
-                borderRadius="25px"
-                bg={colors.linkBg}
-              >
-                {social.icon}
-              </Link>
-            </motion.div>
-          ))}
-        </Box>
+<Box
+      position="fixed"
+      top="55%"
+      left="3%"
+      transform="translateY(-50%)"
+      zIndex="2"
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      color="#70d6ff"
+      gap={gapSize} // Use gapSize here
+    >
+      {[
+        { href: 'https://github.com/Princemashumu', label: 'GitHub', icon: <FaGithub /> },
+        { href: 'https://www.linkedin.com/in/prince-ngwako-mashumu-77977924b/', label: 'LinkedIn', icon: <FaLinkedin /> },
+        { href: 'https://www.facebook.com/princengwakomashumu', label: 'Facebook', icon: <FaFacebook /> },
+        { href: 'https://www.twitter.com/princemashumu', label: 'Twitter', icon: <FaTwitter /> },
+        { href: 'https://www.instagram.com/princengwakomashumu', label: 'Instagram', icon: <FaInstagram /> },
+        { href: 'https://wa.me/0682606328', label: 'WhatsApp', icon: <FaWhatsapp /> },
+      ].map((social, index) => (
+        <motion.div key={index} whileHover={{ scale: 1.2, rotate: 10 }} whileTap={{ scale: 0.9 }}>
+          <Link
+            href={social.href}
+            isExternal
+            aria-label={social.label}
+            _hover={{ color: '#fff', bg: '#70d6ff' }}
+            p={1} // Adjust padding for smaller screens
+            border="1px solid #70d6ff"
+            borderRadius="25px"
+            bg="#000"
+          >
+            <Box fontSize={iconSize}>{social.icon}</Box> {/* Use iconSize here */}
+          </Link>
+        </motion.div>
+      ))}
+    </Box>
 
         <Box
   position="relative"
@@ -116,34 +122,37 @@ const Home = () => {
   gap="1rem"
   paddingLeft="9%"
 >
-  <MotionBox
-    initial={{ opacity: 0, x: '-100vw' }}
-    animate={{ opacity: 1, x: 0 }}
-    transition={{ type: 'spring', stiffness: 50, duration: 5 }}
+<MotionBox
+  initial={{ opacity: 0, x: '-100vw' }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ type: 'spring', stiffness: 50, duration: 5 }}
+>
+  <Heading
+    fontFamily="Anta, sans-serif"
+    fontWeight="400"
+    as="h1"
+    size={{ base: 'sm', sm: 'x.5', md: '2xl', lg: '2xl', xl: '2xl' }} // Adjust size based on screen size
+    mb={{ base: 3, md: 5 }} // Adjust margin bottom for spacing
+    color={colors.primaryText}
+    letterSpacing={{ base: '2px', md: '5px' }} // Adjust letter spacing for better readability
+    textAlign="center" // Center text for small screens
+    px={{ base: 4, md: 0 }} // Add padding for smaller screens
   >
-    <Heading
-      fontFamily="Anta, sans-serif"
-      fontWeight="400"
-      as="h1"
-      size="2xl"
-      mb={5}
-      color={colors.primaryText}
-      letterSpacing="5px"
-      
-      
-    >
-      <Text as="span" color={colors.accent} >Hi,</Text> I am a Software Engineer.
-    </Heading>
-  </MotionBox>
+    <Text as="span" color={colors.accent}>
+      Hi,
+    </Text>{' '}
+    I am a Software Engineer.
+  </Heading>
+</MotionBox>
 
-  <Box
+<Box
   mt={6}
   fontFamily="Anta, sans-serif"
-  fontSize="lg"
+  fontSize={{ base: 'md', md: 'lg' }} // Responsive font size
   lineHeight="1.8"
   letterSpacing="1.5px"
-  p={5}
-  marginRight="9%"
+  p={{ base: 3, md: 5 }} // Responsive padding
+  marginRight={{ base: '5%', md: '9%' }} // Responsive margin
   borderRadius="md"
   border={`0.5px solid ${colors.border}`} // Default border
   borderLeft="none" // No border on the left
@@ -156,29 +165,27 @@ const Home = () => {
   color={colors.primaryText}
 >
   <Text mb={3}>
-      <strong style={{ color: colors.accent }}>Full Name:</strong> Prince Ngwako Mashumu
-    </Text>
-    <Text mb={3}>
-      <strong style={{ color: colors.accent }}>CodeTribe Location:</strong> Soweto, Johannesburg
-    </Text>
-    <Text mb={3}>
-      <strong style={{ color: colors.accent }}>Program Enrolled:</strong> Digital Solutions Developer
-    </Text>
-    <Text mb={3}>
-      <strong style={{ color: colors.accent }}>Contact Information:</strong> princengwakomashumu@gmail.com, 0682606328
-    </Text>
-    <Text>
-  <strong style={{ color: colors.accent }}>Date:</strong>{" "}
-  {new Date().toLocaleDateString("en-GB", {
-    day: "2-digit",
-    month: "short", // Displays the short name of the month
-    year: "numeric",
-  })}
-</Text>
-
-
+    <strong style={{ color: colors.accent }}>Full Name:</strong> Prince Ngwako Mashumu
+  </Text>
+  <Text mb={3}>
+    <strong style={{ color: colors.accent }}>CodeTribe Location:</strong> Soweto, Johannesburg
+  </Text>
+  <Text mb={3}>
+    <strong style={{ color: colors.accent }}>Program Enrolled:</strong> Digital Solutions Developer
+  </Text>
+  <Text mb={3}>
+    <strong style={{ color: colors.accent }}>Contact Information:</strong> princengwakomashumu@gmail.com, 0682606328
+  </Text>
+  <Text>
+    <strong style={{ color: colors.accent }}>Date:</strong>{' '}
+    {new Date().toLocaleDateString('en-GB', {
+      day: '2-digit',
+      month: 'short', // Displays the short name of the month
+      year: 'numeric',
+    })}
+  </Text>
 </Box>
-</Box>
+</Box >
 {/* </MotionBox> */}
 
           <MotionBox
