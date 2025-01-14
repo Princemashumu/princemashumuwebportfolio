@@ -10,7 +10,7 @@ const socialLinks = [
   { href: 'https://github.com/Princemashumu', label: 'GitHub', icon: <FaGithub /> },
   { href: 'https://www.linkedin.com/in/prince-ngwako-mashumu-77977924b/', label: 'LinkedIn', icon: <FaLinkedin /> },
   { href: 'https://www.facebook.com/princengwakomashumu', label: 'Facebook', icon: <FaFacebook /> },
-  { href: 'https://www.twitter.com/princemashumu', label: 'Twitter', icon: <FaTwitter /> },
+//   { href: 'https://www.twitter.com/princemashumu', label: 'Twitter', icon: <FaTwitter /> },
   { href: 'https://www.instagram.com/princengwakomashumu', label: 'Instagram', icon: <FaInstagram /> },
   { href: 'https://wa.me/0682606328', label: 'WhatsApp', icon: <FaWhatsapp /> },
 ];
@@ -18,7 +18,7 @@ const socialLinks = [
 const SocialLinks = ({ iconSize, gapSize }) => (
   <Box
     position="fixed"
-    top="9%"
+    top="17%"
     left="2%"
     transform="translateY(-50%)"
     zIndex={2}
