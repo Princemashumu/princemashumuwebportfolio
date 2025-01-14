@@ -16,7 +16,7 @@ const ProfileSection = ({ colors }) => (
       color: colors.primaryText,
       textAlign: 'left',
       height: '100%',
-      top: '30%',
+      top: '22%',
       left: '15%',
       gap: '1rem',
       paddingLeft: '9%',
@@ -44,9 +44,9 @@ const ProfileSection = ({ colors }) => (
           component="span"
           sx={{ color: colors.accent }}
         >
-          Hi,
+          
         </Typography>{' '}
-        I am a Software Engineer.
+        Hi, I am a Software Engineer.
       </Typography>
     </MotionBox>
 
