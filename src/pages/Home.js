@@ -1,6 +1,6 @@
 // pages/Home.js
 import React, { useEffect, useState } from 'react';
-import { Box } from '@mui/material';
+import { Box, useBreakpointValue } from '@chakra-ui/react';
 import SplashScreen from '../components/SplashScreen';
 import SocialLinks from '../components/SocialLinks';
 import ProfileSection from '../components/ProfileSection';
@@ -22,6 +22,7 @@ const colors = {
 
 const Home = () => {
   const [showSplash, setShowSplash] = useState(true);
+ 
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -33,14 +34,7 @@ const Home = () => {
   return (
     <>
       <SplashScreen showSplash={showSplash} />
-      <Box
-        sx={{
-          backgroundColor: colors.backgroundPrimary,
-          position: 'relative',
-          height: '100vh',
-          overflow: 'hidden',
-        }}
-      >
+      <Box backgroundColor={colors.backgroundPrimary} position="relative" height="100vh" overflow="hidden">
         <Lottie
           animationData={animationData1}
           loop
@@ -50,11 +44,11 @@ const Home = () => {
             left: '85%',
             width: '44%',
             height: '44%',
-            zIndex: 1,
+            zIndex: '1',
             transform: 'translate(-50%, -50%)',
           }}
         />
-        <SocialLinks iconSize="50px" gapSize=".5px" />
+        <SocialLinks iconSize={"30px"} gapSize={"30px"} />
         <ProfileSection colors={colors} />
         <CircleAnimation colors={colors} />
         <ProfileImageSection />
