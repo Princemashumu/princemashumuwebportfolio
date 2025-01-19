@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Box } from '@chakra-ui/react';
-import NavbarComponent from './ProjectsNavbar';
+import { Box } from '@chakra-ui/react';
 import IndividualProjects from './IndividualProjects';
 import GroupProjects from './GroupProjects';
 
 // Import the JSON file
 import projectsData from './data/projects.json';
 
-const ProjectsPopup = ({ isOpen, onClose }) => {
+const Projects = () => {
   const [individualProjects, setIndividualProjects] = useState([]);
   const [groupProjects, setGroupProjects] = useState([]);
 
@@ -20,44 +19,20 @@ const ProjectsPopup = ({ isOpen, onClose }) => {
   }, []);
 
   return (
-    isOpen && (
-      <Box
-        position="fixed"
-        top={0}
-        left={0}
-        width="100vw"
-        height="100vh"
-        bg="gray.900"
-        color="white"
-        zIndex={1050}
-        overflowY="auto"
-        p={4}
-      >
-        <NavbarComponent />
+    <Box
+      width="100%"
+      minHeight="100vh"
+      bg="gray.900"
+      color="white"
+      p={4}
+      paddingLeft={"5%"}
+    >
+      <Box maxWidth="1200px" margin="0 auto">
         <IndividualProjects projects={individualProjects} />
         <GroupProjects projects={groupProjects} />
-        <Button
-          onClick={onClose}
-          bg='#800080'
-          color="white"
-          size="lg"
-          mt={3}
-          mx="auto"
-          display="block"
-          _hover={{
-            bg:  'purple.600',
-          }}
-          _active={{
-            bg: '#800080',
-          }}
-          borderRadius="full"
-          px={8}
-        >
-          Close
-        </Button>
       </Box>
-    )
+    </Box>
   );
 };
 
-export default ProjectsPopup;
+export default Projects;

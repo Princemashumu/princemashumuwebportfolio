@@ -2,23 +2,20 @@
 import React from 'react';
 import { Box, Link } from '@mui/material';
 import { motion } from 'framer-motion';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
 
 const MotionBox = motion(Box);
 
 const socialLinks = [
   { href: 'https://github.com/Princemashumu', label: 'GitHub', icon: <FaGithub /> },
   { href: 'https://www.linkedin.com/in/prince-ngwako-mashumu-77977924b/', label: 'LinkedIn', icon: <FaLinkedin /> },
-  { href: 'https://www.facebook.com/princengwakomashumu', label: 'Facebook', icon: <FaFacebook /> },
-//   { href: 'https://www.twitter.com/princemashumu', label: 'Twitter', icon: <FaTwitter /> },
-  { href: 'https://www.instagram.com/princengwakomashumu', label: 'Instagram', icon: <FaInstagram /> },
   { href: 'https://wa.me/0682606328', label: 'WhatsApp', icon: <FaWhatsapp /> },
 ];
 
 const SocialLinks = ({ iconSize, gapSize }) => (
   <Box
     position="fixed"
-    top="17%"
+    top="30%"
     left="2%"
     transform="translateY(-50%)"
     zIndex={2}

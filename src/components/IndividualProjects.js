@@ -1,68 +1,80 @@
 import React, { useState } from "react";
 import {
   Box,
-  SimpleGrid,
   Card,
   CardBody,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  ModalFooter,
-  Button,
   IconButton,
   Heading,
   Text,
+  Flex,
+  Tag,
   Link,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { MdNavigateNext, MdArrowBackIos } from "react-icons/md";
-
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"; // Import icons
 
 const IndividualProjects = ({ projects }) => {
-  const [currentIndex, setCurrentIndex] = useState(0); // Track the current starting index
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const itemsPerPage = 3; // Number of projects to show at a time
-
-  // Calculate the projects to display
-  const visibleProjects = projects.slice(
-    currentIndex,
-    currentIndex + itemsPerPage
-  );
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
-    if (currentIndex + itemsPerPage < projects.length) {
-      setCurrentIndex(currentIndex + itemsPerPage);
+    if (currentIndex + 1 < projects.length) {
+      setCurrentIndex(currentIndex + 1);
     }
   };
 
   const handlePrev = () => {
-    if (currentIndex - itemsPerPage >= 0) {
-      setCurrentIndex(currentIndex - itemsPerPage);
+    if (currentIndex - 1 >= 0) {
+      setCurrentIndex(currentIndex - 1);
     }
   };
 
-  const openModal = (project) => {
-    setSelectedProject(project);
-    setIsModalOpen(true);
-  };
+  // Gradient for card background
+  const cardBgGradient = useColorModeValue(
+    "linear(to-r, purple.50, pink.50)", // Light mode gradient
+    "linear(to-r, gray.800, gray.900)"  // Dark mode gradient
+  );
 
-  const closeModal = () => {
-    setSelectedProject(null);
-    setIsModalOpen(false);
-  };
+  const textColor = useColorModeValue("gray.700", "gray.200");
+  const headingColor = useColorModeValue("purple.600", "purple.300");
+  const borderColor = useColorModeValue("purple.300", "purple.600");
+  const shadow = useColorModeValue("xl", "2xl");
+  const footerBg = useColorModeValue("gray.200", "gray.800");
+  const linkColor = borderColor;
+
+  // Check if projects array is empty or undefined
+  if (!projects || projects.length === 0) {
+    return (
+      <Box textAlign="center" py={10}>
+        <Text fontSize="sm" color={textColor}>
+          No projects available.
+        </Text>
+      </Box>
+    );
+  }
+
+  const project = projects[currentIndex];
+
+  // Check if project is defined
+  if (!project) {
+    return (
+      <Box textAlign="center" py={10}>
+        <Text fontSize="sm" color={textColor}>
+          Project data is invalid.
+        </Text>
+      </Box>
+    );
+  }
 
   return (
-    <div style={{ paddingTop: "1%" }}>
+    <Box py={8} px={{ base: 4, md: 8 }}>
       <Heading
         as="h3"
         textAlign="center"
-        fontSize="2xl"
-        mb={6}
-        bgGradient="linear(to-r, purple.400, pink.400)"
+        fontSize={{ base: "lg", md: "xl" }}
+        mb={4}
+        bgGradient="linear(to-r, purple.500, pink.500)"
         bgClip="text"
         fontWeight="extrabold"
         textTransform="uppercase"
@@ -72,177 +84,156 @@ const IndividualProjects = ({ projects }) => {
       </Heading>
       <Text
         textAlign="center"
-        fontSize="md"
-        color="gray.600"
-        mb={4}
+        fontSize="sm"
+        color={textColor}
+        mb={6}
       >
         Discover personal projects that highlight creativity, problem-solving, and technical skills.
       </Text>
 
-      <Box display="flex" alignItems="center" justifyContent="center" gap="10px">
-        {/* Left Arrow */}
+      <Box display="flex" alignItems="center" justifyContent="center" gap={4}>
         <IconButton
           aria-label="Previous"
           icon={<MdArrowBackIos />}
           onClick={handlePrev}
           isDisabled={currentIndex === 0}
+          size="sm"
+          variant="ghost"
+          colorScheme="purple"
         />
 
-        {/* Projects Grid */}
-        <SimpleGrid columns={[1, 2, 3]} spacing={4} padding="20px">
-          {visibleProjects.map((project, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => openModal(project)}
+        <Box w="100%" maxW="800px">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Card
+              borderRadius="lg"
+              overflow="hidden"
+              boxShadow={shadow}
+              bgGradient={cardBgGradient} // Apply gradient background
+              minH="300px"
+              border="1px solid"
+              borderColor={borderColor}
+              _hover={{ boxShadow: "2xl", transform: "translateY(-4px)" }}
+              transition="all 0.3s ease"
             >
-              <Card
-                borderRadius="md"
-                overflow="hidden"
-                boxShadow="lg"
-                cursor="pointer"
-                _hover={{ boxShadow: "xl" }}
-                borderRight={`5px solid purple`} // Custom purple border on the right
-  borderBottom={`5px solid purple`} 
-              >
-                <CardBody>
-                  <Heading as="h4" size="md" color="purple.600">
-                    {project.title}
-                  </Heading>
-                  <Text mt={2} fontSize="sm" color="gray.600">
-                    {project.description}
-                  </Text>
-                </CardBody>
-              </Card>
-            </motion.div>
-          ))}
-        </SimpleGrid>
+              <CardBody p={6}>
+                <Heading as="h4" size="sm" color={headingColor} mb={4}>
+                  {project.title || "Untitled Project"}
+                </Heading>
+                <Text fontSize="sm" color={textColor} mb={4}>
+                  {project.description || "No description available."}
+                </Text>
 
-        {/* Right Arrow */}
+                <Box mb={4}>
+                  <Heading size="xs" mb={2} color={headingColor}>
+                    Tech Stack
+                  </Heading>
+                  <Flex wrap="wrap" gap={2}>
+                    {project.techStack ? (
+                      project.techStack.map((tech, index) => (
+                        <Tag
+                          key={index}
+                          size="sm"
+                          variant="subtle"
+                          bgGradient="linear(to-r, purple.500, pink.500)"
+                          color="white"
+                          borderRadius="full"
+                          px={4}
+                          py={1}
+                          fontSize="sm"
+                          fontWeight="medium"
+                        >
+                          {tech}
+                        </Tag>
+                      ))
+                    ) : (
+                      <Text fontSize="sm" color={textColor}>
+                        No tech stack provided.
+                      </Text>
+                    )}
+                  </Flex>
+                </Box>
+
+                <Box mb={4}>
+                  <Heading size="xs" mb={2} color={headingColor}>
+                    Key Features
+                  </Heading>
+                  <Box as="ul" pl={6}>
+                    {project.keyFeatures ? (
+                      project.keyFeatures.map((feature, index) => (
+                        <Text as="li" key={index} mb={2} fontSize="sm" color={textColor}>
+                          {feature}
+                        </Text>
+                      ))
+                    ) : (
+                      <Text fontSize="sm" color={textColor}>
+                        No key features listed.
+                      </Text>
+                    )}
+                  </Box>
+                </Box>
+
+                <Box>
+                  <Heading size="xs" mb={2} color={headingColor}>
+                    Challenges
+                  </Heading>
+                  <Text fontSize="sm" color={textColor}>
+                    {project.challenges || "No challenges described."}
+                  </Text>
+                </Box>
+              </CardBody>
+
+              <Box p={3} bg={footerBg} textAlign="center" borderTop="1px solid" borderColor={borderColor}>
+  <Flex justify="center" gap={"20%"}> {/* Add spacing between links */}
+    <Link
+      href={project.githubLink || "#"}
+      isExternal
+      color={linkColor}
+      fontWeight="medium"
+      fontSize="sm"
+      _hover={{ textDecoration: "underline" }}
+      display="flex"
+      alignItems="center"
+      gap={2} // Add spacing between icon and text
+    >
+      <FaGithub size={20} /> {/* GitHub icon */}
+      GitHub
+    </Link>
+    <Link
+      href={project.liveLink || "#"}
+      isExternal
+      color={linkColor}
+      fontWeight="medium"
+      fontSize="sm"
+      _hover={{ textDecoration: "underline" }}
+      display="flex"
+      alignItems="center"
+      gap={2} // Add spacing between icon and text
+    >
+      <FaExternalLinkAlt size={20} /> {/* Live link icon */}
+      Demo
+    </Link>
+  </Flex>
+</Box>
+            </Card>
+          </motion.div>
+        </Box>
+
         <IconButton
           aria-label="Next"
           icon={<MdNavigateNext />}
           onClick={handleNext}
-          isDisabled={currentIndex + itemsPerPage >= projects.length}
+          isDisabled={currentIndex + 1 >= projects.length}
+          size="sm"
+          variant="ghost"
+          colorScheme="purple"
         />
       </Box>
-
-      {selectedProject && (
-  <Modal isOpen={isModalOpen} onClose={closeModal} size="lg">
-    <ModalOverlay />
-    <ModalContent 
-      bg="gray.800" 
-      color="white" 
-      borderRadius="lg" 
-      boxShadow="2xl" 
-      overflow="hidden"
-      position="relative"
-      top="-50px"  // Adjust this value to move the modal higher or lower
-    >
-      <ModalHeader
-        fontSize="2xl"
-        fontWeight="bold"
-        bgGradient="linear(to-r, purple.500, purple.700)"
-        color="white"
-        p={4}
-      >
-        {selectedProject.title}
-      </ModalHeader>
-      <ModalCloseButton color="white" />
-      <ModalBody px={6} py={4}>
-        <Box
-          p={4}
-          bg="gray.700"
-          borderRadius="md"
-          boxShadow="md"
-          mb={4}
-        >
-          <Heading size="sm" mb={2} color="purple.300">
-            Description:
-          </Heading>
-          <Box fontSize="lg">{selectedProject.description}</Box>
-        </Box>
-        <Box
-          p={4}
-          bg="gray.700"
-          borderRadius="md"
-          boxShadow="md"
-          mb={4}
-        >
-          <Heading size="sm" mb={2} color="purple.300">
-            Tech Stack:
-          </Heading>
-          <Box fontSize="lg">
-            <Text as="span" fontWeight="medium" color="purple.500">
-              {selectedProject.techStack.join(", ")}
-            </Text>
-          </Box>
-        </Box>
-        <Box
-          p={4}
-          bg="gray.700"
-          borderRadius="md"
-          boxShadow="md"
-          mb={4}
-        >
-          <Heading size="sm" mb={2} color="purple.300">
-            Key Features:
-          </Heading>
-          <Box as="ul" pl={6} color="gray.600">
-            {selectedProject.keyFeatures.map((feature, index) => (
-              <Text as="li" key={index} mb="2" fontSize="lg">
-                {feature}
-              </Text>
-            ))}
-          </Box>
-        </Box>
-        <Box
-          p={4}
-          bg="gray.700"
-          borderRadius="md"
-          boxShadow="md"
-        >
-          <Heading size="sm" mb={2} color="purple.300">
-            Challenges:
-          </Heading>
-          <Box fontSize="lg">{selectedProject.challenges}</Box>
-        </Box>
-      </ModalBody>
-      <ModalFooter
-        bg="gray.700"
-        display="flex"
-        justifyContent="space-between"
-        padding={4}
-      >
-        {/* GitHub Link */}
-        <Link
-          href={selectedProject.githubLink} 
-          isExternal
-          color="purple.500" 
-          fontWeight="semibold" 
-          fontSize="sm"
-          mr={4}
-        >
-          View on GitHub
-        </Link>
-
-        {/* Close Button */}
-        <Button
-          colorScheme="purple"
-          size="lg"
-          borderRadius="full"
-          px={8}
-          onClick={closeModal}
-        >
-          Close
-        </Button>
-      </ModalFooter>
-    </ModalContent>
-  </Modal>
-)}
-
-</div>
+    </Box>
   );
 };
 

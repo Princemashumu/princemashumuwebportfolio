@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import {
   AppBar,
   Toolbar,
@@ -21,7 +21,7 @@ import ProjectsPopup from '../components/ProjectsPopup';
 import SkillsPopup from '../components/SkillsPopup';
 import AboutPopup from '../components/AboutPopup';
 import SplashLoader from '../components/Splash';
-import AssesmentsPopup from './Assesmentspopup';
+import Assessmentspopup from '../components/Assesmentspopup';
 
 const NavbarComponent = () => {
   const [activePopup, setActivePopup] = useState(null);
@@ -30,33 +30,20 @@ const NavbarComponent = () => {
   const navigate = useNavigate();
 
   const isSmallScreen = useMediaQuery('(max-width:600px)');
+  const navLinks = ['home', 'projects', 'skills', 'assessments', 'about'];
 
-  const navLinks = ['home', 'projects', 'skills', 'assesments', 'about'];
+  const handlePopupClose = useCallback(() => setActivePopup(null), []);
 
-  const handlePopupClose = () => {
-    setLoading(true);
-    setTimeout(() => {
+  const handleNavClick = useCallback((target) => {
+    if (target === 'home') {
       setActivePopup(null);
-      setLoading(false);
-    }, 1000);
-  };
+      navigate('/');
+    } else {
+      setActivePopup(target);
+    }
+  }, [navigate]);
 
-  const handleNavClick = (target) => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      if (target === 'home') {
-        setActivePopup(null);
-        navigate('/');
-      } else {
-        setActivePopup(target);
-      }
-    }, 1000);
-  };
-
-  const toggleDrawer = (open) => () => {
-    setIsDrawerOpen(open);
-  };
+  const toggleDrawer = useCallback((open) => () => setIsDrawerOpen(open), []);
 
   const linkStyles = (isActive) => ({
     cursor: 'pointer',
@@ -76,70 +63,30 @@ const NavbarComponent = () => {
 
       <AppBar
         position="fixed"
-        sx={{
-          background: 'transparent',
-          boxShadow: 'none',
-          zIndex: 1000,
-        }}
+        sx={{ background: 'linear-gradient(135deg, #1f1f1f 0%, #3a3a3a 100%)', boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.3)', zIndex: 1000 }}
       >
         <Container maxWidth="xl">
           <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
-            <Box
-              sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
-              onClick={() => handleNavClick('home')}
-            >
-              <img
-                src={logo}
-                alt="Logo"
-                width="30"
-                height="30"
-                style={{ marginRight: 8 }}
-              />
-              <Typography
-                variant="h6"
-                sx={{
-                  color: 'white',
-                  fontSize: isSmallScreen ? '0.8rem' : '1rem',
-                  letterSpacing: '3px',
-                  fontFamily: 'Anta, sans-serif',
-                  fontWeight: 500,
-                }}
-              >
-                MASHUMU
-              </Typography>
-            </Box>
+            <Link to="/" style={{ textDecoration: 'none' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
+                <img src={logo} alt="Logo" width="30" height="30" style={{ marginRight: 8 }} />
+                <Typography variant="h6" sx={{ color: 'white', fontSize: isSmallScreen ? '0.8rem' : '1rem', letterSpacing: '3px', fontFamily: 'Anta, sans-serif', fontWeight: 500 }}>
+                  MASHUMU
+                </Typography>
+              </Box>
+            </Link>
 
             {isSmallScreen ? (
-              <IconButton
-                color="inherit"
-                onClick={toggleDrawer(true)}
-              >
+              <IconButton color="inherit" onClick={toggleDrawer(true)}>
                 <MenuIcon />
               </IconButton>
             ) : (
-              <Box
-                sx={{
-                  display: 'flex',
-                  gap: 3,
-                  alignItems: 'center',
-                  fontFamily: 'Anta, sans-serif',
-                  fontWeight: 400,
-                }}
-              >
-                {navLinks.map((link) => {
-                  const isActive =
-                    activePopup === link || (link === 'home' && activePopup === null);
-                  return (
-                    <Typography
-                      key={link}
-                      component="span"
-                      onClick={() => handleNavClick(link)}
-                      sx={linkStyles(isActive)}
-                    >
-                      {link.charAt(0).toUpperCase() + link.slice(1)}
-                    </Typography>
-                  );
-                })}
+              <Box sx={{ display: 'flex', gap: 3, alignItems: 'center', fontFamily: 'Anta, sans-serif', fontWeight: 400 }}>
+                {navLinks.map((link) => (
+                  <Typography key={link} component="span" onClick={() => handleNavClick(link)} sx={linkStyles(activePopup === link || (link === 'home' && !activePopup))}>
+                    {link.charAt(0).toUpperCase() + link.slice(1)}
+                  </Typography>
+                ))}
               </Box>
             )}
 
@@ -150,17 +97,7 @@ const NavbarComponent = () => {
                   target="_blank"
                   variant="contained"
                   startIcon={<DownloadIcon />}
-                  sx={{
-                    backgroundColor: '#800080',
-                    borderRadius: '25px',
-                    fontFamily: 'Anta, sans-serif',
-                    fontWeight: 400,
-                    textTransform: 'none',
-                    px: 2,
-                    py: 1,
-                    fontSize: '0.9rem',
-                    '&:hover': { backgroundColor: '#993399' },
-                  }}
+                  sx={{ backgroundColor: '#800080', borderRadius: '25px', fontFamily: 'Anta, sans-serif', fontWeight: 400, textTransform: 'none', px: 2, py: 1, fontSize: '0.9rem', '&:hover': { backgroundColor: '#993399' } }}
                 >
                   Resume
                 </Button>
@@ -170,53 +107,22 @@ const NavbarComponent = () => {
         </Container>
       </AppBar>
 
-      <Drawer
-        anchor="right"
-        open={isDrawerOpen}
-        onClose={toggleDrawer(false)}
-        sx={{
-          '& .MuiDrawer-paper': {
-            backgroundColor: 'rgba(0, 0, 0, 0.9)', color: 'purple',fontWeight: 400,
-          },
-        }}
-      >
-        <Box
-          sx={{
-            width: 250,
-            padding: 2,
-          }}
-          role="presentation"
-          onClick={toggleDrawer(false)}
-          onKeyDown={toggleDrawer(false)}
-        >
+      <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer(false)} sx={{ '& .MuiDrawer-paper': { backgroundColor: 'rgba(0, 0, 0, 0.9)', color: 'purple', fontWeight: 400 } }}>
+        <Box sx={{ width: 250, padding: 2 }} role="presentation" onClick={toggleDrawer(false)}>
           <List>
             {navLinks.map((link) => (
-              <ListItem button key={link} onClick={() => handleNavClick(link)}>
-                <ListItemText
-                  primary={link.charAt(0).toUpperCase() + link.slice(1)}
-                />
+              <ListItem button component="button" key={link} onClick={() => handleNavClick(link)}>
+                <ListItemText primary={link.charAt(0).toUpperCase() + link.slice(1)} />
               </ListItem>
             ))}
           </List>
-
-          {/* Add the resume button inside the Drawer for small screens */}
           <Tooltip title="Download resume">
             <Button
               href="https://drive.google.com/file/d/1GkJPUaG0j9Ncxv4fmymH-qtUt8Nd55YW/view?usp=drive_link"
               target="_blank"
               variant="contained"
               startIcon={<DownloadIcon />}
-              sx={{
-                backgroundColor: '#800080',
-                borderRadius: '25px',
-                fontFamily: 'Anta, sans-serif',
-                fontWeight: 400,
-                textTransform: 'none',
-                px: 2,
-                py: 1,
-                fontSize: '0.9rem',
-                '&:hover': { backgroundColor: '#993399' },
-              }}
+              sx={{ backgroundColor: '#800080', borderRadius: '25px', fontFamily: 'Anta, sans-serif', fontWeight: 400, textTransform: 'none', px: 2, py: 1, fontSize: '0.9rem', '&:hover': { backgroundColor: '#993399' } }}
             >
               Resume
             </Button>
@@ -227,7 +133,7 @@ const NavbarComponent = () => {
       {activePopup === 'projects' && <ProjectsPopup isOpen onClose={handlePopupClose} />}
       {activePopup === 'skills' && <SkillsPopup isOpen onClose={handlePopupClose} />}
       {activePopup === 'about' && <AboutPopup isOpen onClose={handlePopupClose} />}
-      {activePopup === 'assesments' && <AssesmentsPopup isOpen onClose={handlePopupClose} />}
+      {activePopup === 'assessments' && <Assessmentspopup isOpen onClose={handlePopupClose} />}
     </>
   );
 };

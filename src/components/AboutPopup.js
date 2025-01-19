@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import NavbarComponent from './AboutNavbar';
-import { Box, Heading, Button, VStack, Flex, Text, List, ListItem} from '@chakra-ui/react';
+import { Box, Heading, Button, VStack, Flex, Text, List, ListItem, useColorModeValue } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
 const colors = {
@@ -16,7 +15,7 @@ const colors = {
 
 const MotionBox = motion(Box);
 
-const AboutPopup = ({ isOpen, onClose }) => {
+const AboutComponent = () => {
   const [selectedSection, setSelectedSection] = useState('selfReflections');
 
   const sections = {
@@ -91,103 +90,150 @@ const AboutPopup = ({ isOpen, onClose }) => {
     ),
   };
 
+  // Gradient for card background
+  const cardBgGradient = useColorModeValue(
+    "linear(to-r, purple.50, pink.50)", // Light mode gradient
+    "linear(to-r, gray.800, gray.900)"  // Dark mode gradient
+  );
+
+  const textColor = useColorModeValue("gray.700", "gray.200");
+  const headingColor = useColorModeValue("purple.600", "purple.300");
+  const borderColor = useColorModeValue("purple.300", "purple.600");
+
   return (
-    isOpen && (
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="center"
+      textAlign="center"
+      padding="2rem"
+      gap="1rem"
+    >
+      {/* Heading and Description */}
+      <Heading
+        as="h2"
+        fontSize="2xl"
+        mb={4}
+        bgGradient="linear(to-r, purple.400, pink.400)"
+        bgClip="text"
+        fontWeight="extrabold"
+        textTransform="uppercase"
+        letterSpacing="wide"
+      >
+        About Me
+      </Heading>
+      <Text fontSize="md" mb={6} color={textColor}>
+        Welcome to my portfolio! Here, you can learn more about my journey, goals, and the feedback I've received from mentors and facilitators.
+      </Text>
+
       <MotionBox
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
-        position="fixed"
-        top="0"
-        left="0"
-        width="100vw"
-        height="100vh"
         backgroundColor={colors.backgroundPrimary}
         color={colors.primaryText}
-        zIndex="1050"
-        overflowY="auto"
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
+        p={6}
+        borderRadius="lg"
+        boxShadow="2xl"
+        border="1px solid"
+        borderColor={borderColor}
+        maxW="800px"
+        width="100%"
+        mx="auto"
+        my={8}
       >
-        <NavbarComponent />
+        <Flex justifyContent="space-around" mb={6}>
+  <Button
+    onClick={() => setSelectedSection('selfReflections')}
+    bgGradient={
+      selectedSection === 'selfReflections'
+        ? "linear(to-r, purple.500, pink.500)" // Gradient for active button
+        : "transparent"
+    }
+    color={selectedSection === 'selfReflections' ? 'white' : colors.primaryText}
+    borderRadius="full" // Rounded corners
+    px={6} // Horizontal padding
+    py={3} // Vertical padding
+    fontSize="md"
+    fontWeight="medium"
+    _hover={{
+      bgGradient: "linear(to-r, purple.600, pink.600)", // Gradient on hover
+      transform: "scale(1.05)", // Slight scale effect on hover
+    }}
+    _active={{
+      bgGradient: "linear(to-r, purple.700, pink.700)", // Gradient when clicked
+    }}
+    transition="all 0.3s ease" // Smooth transition for hover effects
+  >
+    Self-Reflections
+  </Button>
+  <Button
+    onClick={() => setSelectedSection('postProgramGoals')}
+    bgGradient={
+      selectedSection === 'postProgramGoals'
+        ? "linear(to-r, purple.500, pink.500)" // Gradient for active button
+        : "transparent"
+    }
+    color={selectedSection === 'postProgramGoals' ? 'white' : colors.primaryText}
+    borderRadius="full" // Rounded corners
+    px={6} // Horizontal padding
+    py={3} // Vertical padding
+    fontSize="md"
+    fontWeight="medium"
+    _hover={{
+      bgGradient: "linear(to-r, purple.600, pink.600)", // Gradient on hover
+      transform: "scale(1.05)", // Slight scale effect on hover
+    }}
+    _active={{
+      bgGradient: "linear(to-r, purple.700, pink.700)", // Gradient when clicked
+    }}
+    transition="all 0.3s ease" // Smooth transition for hover effects
+  >
+    Post-Program Goals
+  </Button>
+  <Button
+    onClick={() => setSelectedSection('facilitatorsFeedback')}
+    bgGradient={
+      selectedSection === 'facilitatorsFeedback'
+        ? "linear(to-r, purple.500, pink.500)" // Gradient for active button
+        : "transparent"
+    }
+    color={selectedSection === 'facilitatorsFeedback' ? 'white' : colors.primaryText}
+    borderRadius="full" // Rounded corners
+    px={6} // Horizontal padding
+    py={3} // Vertical padding
+    fontSize="md"
+    fontWeight="medium"
+    _hover={{
+      bgGradient: "linear(to-r, purple.600, pink.600)", // Gradient on hover
+      transform: "scale(1.05)", // Slight scale effect on hover
+    }}
+    _active={{
+      bgGradient: "linear(to-r, purple.700, pink.700)", // Gradient when clicked
+    }}
+    transition="all 0.3s ease" // Smooth transition for hover effects
+  >
+    Facilitators' Feedback
+  </Button>
+</Flex>
+        {/* Render the selected section */}
         <Box
-          position="relative"
-          top="50px"
-          width="90%"
-          maxWidth="800px"
           p={5}
+          borderRadius="md"
+          borderColor={borderColor}
+          borderWidth={1}
+          borderRight={`10px solid ${colors.accent}`} // Custom purple border on the right
+          borderBottom={`10px solid ${colors.accent}`} // Custom purple border on the bottom
+          boxShadow="lg"
+          bgGradient={cardBgGradient}
+          color={textColor}
         >
-          {/* Navigation Buttons */}
-          <Flex justifyContent="space-around" mb={6}>
-            <Button
-              onClick={() => setSelectedSection('selfReflections')}
-              bg={selectedSection === 'selfReflections' ? colors.linkBg : 'transparent'}
-              color={selectedSection === 'selfReflections' ? 'white' : colors.primaryText}
-              _hover={{
-                bg: colors.linkBgHover,
-              }}
-            >
-              Self-Reflections
-            </Button>
-            <Button
-              onClick={() => setSelectedSection('postProgramGoals')}
-              bg={selectedSection === 'postProgramGoals' ? colors.linkBg : 'transparent'}
-              color={selectedSection === 'postProgramGoals' ? 'white' : colors.primaryText}
-              _hover={{
-                bg: colors.linkBgHover,
-              }}
-            >
-              Post-Program Goals
-            </Button>
-            <Button
-              onClick={() => setSelectedSection('facilitatorsFeedback')}
-              bg={selectedSection === 'facilitatorsFeedback' ? colors.linkBg : 'transparent'}
-              color={selectedSection === 'facilitatorsFeedback' ? 'white' : colors.primaryText}
-              _hover={{
-                bg: colors.linkBgHover,
-              }}
-            >
-              Facilitators' Feedback
-            </Button>
-          </Flex>
-
-          {/* Render the selected section */}
-          <Box p={5} borderRadius="md" borderColor={colors.border} borderWidth={1}
-  borderRight={`10px solid purple`} // Custom purple border on the right
-  borderBottom={`10px solid purple`} boxShadow="lg">
-            {sections[selectedSection]}
-          </Box>
-
-          {/* Close Button */}
-          <Box textAlign="center" mt={6}>
-            <Button
-              onClick={onClose}
-              bg={colors.accent}
-              color="white"
-              size="lg"
-              borderRadius="full"
-              px={8}
-              py={4}
-              fontSize="lg"
-              fontWeight="bold"
-              _hover={{
-                bg: colors.linkBgHover,
-              }}
-              _active={{
-                bg: colors.linkBg,
-              }}
-              _focus={{
-                outline: 'none',
-              }}
-            >
-              Close
-            </Button>
-          </Box>
+          {sections[selectedSection]}
         </Box>
       </MotionBox>
-    )
+    </Box>
   );
 };
 
-export default AboutPopup;
+export default AboutComponent;

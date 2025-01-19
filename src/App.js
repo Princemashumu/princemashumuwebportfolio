@@ -1,9 +1,9 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
+import FooterComponent from './components/FooterComponent'; // Import FooterComponent
 
 const theme = createTheme({
   palette: {
@@ -29,6 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
+        <FooterComponent /> {/* Add FooterComponent here */}
       </Router>
     </ThemeProvider>
   );

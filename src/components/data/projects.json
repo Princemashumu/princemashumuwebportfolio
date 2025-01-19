@@ -8,7 +8,8 @@
       "techStack": ["React","Material-UI","API","React Router","Node.js"], 
       "keyFeatures": ["Real-Time Weather","Date Display","Location-based Forecast"],
       "challenges": "Working with open weather API and also understanding the API",
-      "githubLink": "https://github.com/Princemashumu/Weather-APP"
+      "githubLink": "https://github.com/Princemashumu/Weather-APP",
+      "liveLink": "https://weather-app-flame-omega-51.vercel.app/"
     },
     {
       "title": "To Do List App",
@@ -16,7 +17,8 @@
       "techStack": ["Node.js ","SQLite3"], 
       "keyFeatures": ["User Authentication","Task Prioritization","Task Filtering"],
       "challenges": "Implementing Sqlite3 and also understanding the SQLite3 module",
-      "githubLink": "https://github.com/Princemashumu/To-Do-List-App"
+      "githubLink": "https://github.com/Princemashumu/To-Do-List-App",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     }
     ,
     {
@@ -25,7 +27,8 @@
       "techStack": ["React Native","Expo","Expo Media Library","React Native View Shot"], 
       "keyFeatures": ["Customizable Cards","Save Cards to Gallery","Cross-Platform"],
       "challenges": "Implementing view shot and also understanding the media library",
-      "githubLink": "https://github.com/Princemashumu/BirthdayCard_app"
+      "githubLink": "https://github.com/Princemashumu/BirthdayCard_app",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     }
     ,
     {
@@ -34,7 +37,8 @@
       "techStack": ["React Native","Expo","Expo Audio","AsyncStorage","Material-UI Icons","Animated API"], 
       "keyFeatures": ["Record Audio","Playback Controls","Cross-Platform","Delete Recordings"],
       "challenges": "Working with Expo and AsyncStorage",
-      "githubLink": "https://github.com/Princemashumu/Voice-Memos"
+      "githubLink": "https://github.com/Princemashumu/Voice-Memos",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     },
     {
       "title": "Gallery App",
@@ -42,7 +46,8 @@
       "techStack": ["React Native","Expo"], 
       "keyFeatures": ["Capture Images","Display Images"],
       "challenges": "Working with Expo and also understanding the camera module",
-      "githubLink": "https://github.com/Princemashumu/GalleryApplication"
+      "githubLink": "https://github.com/Princemashumu/GalleryApplication",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     }
     ,
 
@@ -52,7 +57,8 @@
       "techStack": [" ReactJS", "Material-UI","Firebase","React Hooks"], 
       "keyFeatures": ["User Authentication", "Room Reservation","Favorites","Responsive Design"],
       "challenges": "Working with firebase and also understanding the firebase authentication",
-      "githubLink": "https://github.com/Princemashumu/HOTEL-APPLICATION"
+      "githubLink": "https://github.com/Princemashumu/HOTEL-APPLICATION",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     }
     ,
     {
@@ -61,7 +67,8 @@
       "techStack": [" ReactJS", "Material-UI","Firebase","React Hooks"], 
       "keyFeatures": ["User Authentication", "Room Reservation","Favorites","Responsive Design"],
       "challenges": "Working with firebase and also understanding the firebase authentication",
-      "githubLink": "https://github.com/Princemashumu/hotelappcms"
+      "githubLink": "https://github.com/Princemashumu/hotelappcms",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     }
     ,
     {
@@ -70,7 +77,8 @@
       "techStack": ["HTML", "CSS", "JavaScript"],
       "keyFeatures": ["Responsive Design", "Dynamic Content"],
       "challenges": "Implementing a grid for the first time and also not using flexbox",
-      "githubLink": "https://github.com/Princemashumu/UI-Challenge-Task-1-CodeTribe-2024"
+      "githubLink": "https://github.com/Princemashumu/UI-Challenge-Task-1-CodeTribe-2024",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     },
     {
       "title": "Shopping List App",
@@ -78,7 +86,8 @@
       "techStack": ["ReactJS","Redux","JSON Server"], 
       "keyFeatures": ["State management using Redux.","CRUD Operations"," Manage multiple shopping lists","Authentication"],
       "challenges": "State management using Redux",
-      "githubLink": "https://github.com/Princemashumu/shoppinglist"
+      "githubLink": "https://github.com/Princemashumu/shoppinglist",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     },
     {
       "title": "Node.js HTTP Server",
@@ -86,7 +95,8 @@
       "techStack": ["JavaScript", "Node.js"],
       "keyFeatures": ["POST Requests", "GET Requests"],
       "challenges": "Error Handling and also understanding the HTTP module",
-      "githubLink": "https://github.com/Princemashumu/BasicNodeJsServer"
+      "githubLink": "https://github.com/Princemashumu/BasicNodeJsServer",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     },
     {
       "title": "Online Recipe App",
@@ -94,7 +104,8 @@
       "techStack": ["ReactJS", "JSON Server", "Node.js","Material-UI"],
       "keyFeatures": ["User Authentication", "CRUD Operations","Search Functionality","Responsive Design"],
       "challenges": "Workinng with user authentication and also understanding the JSON server",
-      "githubLink": "https://github.com/Princemashumu/Online-Recipe"
+      "githubLink": "https://github.com/Princemashumu/Online-Recipe",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     },
     {
       "title": "Quiz Application",
@@ -102,7 +113,8 @@
       "techStack": ["ReactJS", "Node.js", "JSON file","readline"],
       "keyFeatures": ["Timed quiz", "Real-time feedback on answers","Asynchronous question handling"],
       "challenges": "Understanding asynchronous functions and also working with the readline module",
-      "githubLink": "https://github.com/Princemashumu/quizapplication"
+      "githubLink": "https://github.com/Princemashumu/quizapplication",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     },
     {
       "title": "File Manager and REST API",
@@ -110,7 +122,8 @@
       "techStack": ["Node.js (v12+)", "Postman","HTTP module"],
       "keyFeatures": ["CRUD Operations", "Endpoints"],
       "challenges": "Working with endpoints and also understanding the file system module",
-      "githubLink": "https://github.com/Princemashumu/File-Manager-and-a-REST-API"
+      "githubLink": "https://github.com/Princemashumu/File-Manager-and-a-REST-API",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     },
     {
       "title": "Book Directory API",
@@ -118,7 +131,8 @@
       "techStack": ["Node.js (v12+)", "Postman","HTTP module"], 
       "keyFeatures": ["CRUD Operations", "Endpoints"],
       "challenges": "Working with endpoints and also understanding the HTTP module",
-      "githubLink": "https://github.com/Princemashumu/book-directory"
+      "githubLink": "https://github.com/Princemashumu/book-directory",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     }
     ,
     {
@@ -127,7 +141,8 @@
       "techStack": ["Node.js (v12+)", "ReactJS","JSON Server"], 
       "keyFeatures": ["CRUD Operations", "Endpoints"],
       "challenges": "Cannot read properties of null (reading 'useContext')",
-      "githubLink": "https://github.com/Princemashumu/REGISTER-WEBAPPLICATION"
+      "githubLink": "https://github.com/Princemashumu/REGISTER-WEBAPPLICATION",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     }
     ,
     {
@@ -136,7 +151,8 @@
       "techStack": ["Node.js (v12+)", "Express"], 
       "keyFeatures": ["Deploying on Vercel", "GET Requests"],
       "challenges": "Deploying on Vercel and also understanding the Express module",
-      "githubLink": "https://github.com/Princemashumu/SimpleNodejs"
+      "githubLink": "https://github.com/Princemashumu/SimpleNodejs",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     }
     ,
     {
@@ -145,7 +161,8 @@
       "techStack": ["ReactJs","Material-UI"], 
       "keyFeatures": ["Matching Cards", "Timer"],
       "challenges": "None",
-      "githubLink": "https://github.com/Princemashumu/Card-Guessing-Game"
+      "githubLink": "https://github.com/Princemashumu/Card-Guessing-Game",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     }
     ,
     {
@@ -154,7 +171,8 @@
       "techStack": ["MongoDB","MongoDB shell"], 
       "keyFeatures": ["Creating Database","Creating Collections ","Inserting Documents"],
       "challenges": "Implenting MongoDB shell commands",
-      "githubLink": "https://github.com/Princemashumu/mongoDB"
+      "githubLink": "https://github.com/Princemashumu/mongoDB",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     }
     ,
     {
@@ -163,7 +181,8 @@
       "techStack": ["MongoDB","MongoDB shell"], 
       "keyFeatures": ["Create Database ","Create Collections","Inserting Documents"],
       "challenges": "Understanding mongoDB shell commands",
-      "githubLink": "https://github.com/Princemashumu/Library-Management-System"
+      "githubLink": "https://github.com/Princemashumu/Library-Management-System",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     }
     ,
     {
@@ -172,7 +191,8 @@
       "techStack": ["Node.js", "Express", "MongoDB","MongoDB shell"], 
       "keyFeatures": ["Retrieve all recipes with pagination.","Retrieve a recipe by ID."],
       "challenges": "None",
-      "githubLink": "https://github.com/Princemashumu/restfulapi_recipeapp"
+      "githubLink": "https://github.com/Princemashumu/restfulapi_recipeapp",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     }
     ,
     {
@@ -181,7 +201,8 @@
       "techStack": ["ReactJS","Paypal Developer"], 
       "keyFeatures": ["Payment Gateway Integration"],
       "challenges": "None",
-      "githubLink": "https://github.com/Princemashumu/PaymentGateway"
+      "githubLink": "https://github.com/Princemashumu/PaymentGateway",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     }
     
   ],
@@ -192,7 +213,8 @@
       "techStack": ["React","Firebase","React native","Expo","Material-UI Icons","Node.js "],
       "keyFeatures": ["Book a table", "Notifications","Real-time updates","User Authentication","Payment Gateway Integration"],
       "challenges": "Implemented real-time updates using Firebase.",
-      "githubLink": "https://github.com/orgs/MPE-dining-table/repositories"
+      "githubLink": "https://github.com/orgs/MPE-dining-table/repositories",
+       "liveLink": "https://weather-app-psi.vercel.app/"
     }
   ]
 }
