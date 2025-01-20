@@ -86,7 +86,7 @@ const Footer = () => {
         {/* Footer Bottom */}
         <Box sx={{ textAlign: "center", mt: 4, borderTop: "1px solid gray", pt: 2 }}>
           <Typography variant="body2">
-            © {new Date().getFullYear()} Prince Mashumu. All Rights Reserved.
+            © {new Date().getFullYear()} Prince Ngwako Mashumu. All Rights Reserved.
           </Typography>
         </Box>
       </Container>
