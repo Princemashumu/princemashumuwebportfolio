@@ -33,7 +33,7 @@ const iconMap = {
 };
 
 const colors = {
-  backgroundPrimary: 'rgb(23,25,35)',
+  backgroundPrimary: 'rgb(23,25,35)', // Main background remains the same
   primaryText: 'white',
   accent: '#800080',
 };
@@ -43,11 +43,8 @@ const MotionBox = motion(Box);
 const SkillsComponent = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  // Gradient for card background
-  const cardBgGradient = useColorModeValue(
-    "linear(to-r, purple.50, pink.50)", // Light mode gradient
-    "linear(to-r, gray.800, gray.900)"  // Dark mode gradient
-  );
+  // Gradient for card background (removed, replaced with black)
+  const cardBg = useColorModeValue("gray.100", "black"); // Black for dark mode, light gray for light mode
 
   const textColor = useColorModeValue("gray.700", "gray.200");
   const headingColor = useColorModeValue("purple.600", "purple.300");
@@ -76,19 +73,20 @@ const SkillsComponent = () => {
         >
           Skills Matrix
         </Heading>
-        <Text fontSize="lg" color="gray.300">
-          Explore my technical and creative skills by category.
+        <Text fontSize="lg" color="gray.600">
+          Embark on a journey through my technical and creative expertise, where innovation meets passion.
         </Text>
       </Box>
       <SimpleGrid columns={[1, null, 3]} spacing={8}>
         {Object.keys(categorizedSkills).map((category) => (
           <MotionBox
             key={category}
-            p={5}
+            p={8}
+            minH="150px"
             borderWidth="1px"
             borderRadius="lg"
-            boxShadow="lg"
-            bgGradient={cardBgGradient}
+            boxShadow="0px 4px 10px rgba(128, 0, 128, 0.5)" // Purple shadow
+            backgroundColor={cardBg} // Black background for boxes
             textAlign="center"
             cursor="pointer"
             onClick={() => setSelectedCategory(selectedCategory === category ? null : category)}
@@ -96,6 +94,9 @@ const SkillsComponent = () => {
             whileTap={{ scale: 0.95 }}
             border="1px solid"
             borderColor={borderColor}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
           >
             <Heading size="md" color={headingColor}>
               {category.replace(/([A-Z])/g, ' $1').trim()}
@@ -113,20 +114,32 @@ const SkillsComponent = () => {
             {categorizedSkills[selectedCategory].map((skill) => (
               <MotionBox
                 key={skill.skill}
-                p={5}
+                p={8}
+                minH="150px"
                 borderWidth="1px"
                 borderRadius="lg"
-                boxShadow="lg"
-                bgGradient={cardBgGradient}
+                boxShadow="0px 4px 10px rgba(128, 0, 128, 0.5)" // Purple shadow
+                backgroundColor={cardBg} // Black background for boxes
                 textAlign="center"
                 cursor="pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 border="1px solid"
                 borderColor={borderColor}
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                justifyContent="center"
               >
                 {React.cloneElement(iconMap[skill.icon] || <Box>🔧</Box>, { size: 48 })}
-                <Text mt={2} fontSize="sm" color={textColor}>
+                <Text mt={4} fontWeight="bold"
+                  bgGradient="linear(to-r, purple.500, pink.500)"
+                  color="white"
+                  borderRadius="full"
+                  px={4}
+                  py={2}
+                  fontSize="md"
+                >
                   {skill.skill}
                 </Text>
               </MotionBox>

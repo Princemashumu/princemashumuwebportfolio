@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
-import ProfileImageSection from '../components/ProfileImageSection';
+
 
 const MotionBox = motion(Box);
 
@@ -49,7 +49,6 @@ const ProfileSection = ({ colors }) => (
         Hi, I am a Software Engineer.
       </Typography>
     </MotionBox>
-    <ProfileImageSection />
     <Box
       sx={{
         mt: { xs: 17, md: 6 },
