@@ -8,8 +8,6 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import Lottie from 'lottie-react';
-import animationData1 from '../assets/anime1.json';
 import {
   FaFigma,
   FaHtml5,
@@ -46,7 +44,6 @@ const SkillsComponent = () => {
   // Gradient for card background (removed, replaced with black)
   const cardBg = useColorModeValue("gray.100", "black"); // Black for dark mode, light gray for light mode
 
-  const textColor = useColorModeValue("gray.700", "gray.200");
   const headingColor = useColorModeValue("purple.600", "purple.300");
   const borderColor = useColorModeValue("purple.300", "purple.600");
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, useBreakpointValue } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import SplashScreen from '../components/SplashScreen';
 import SocialLinks from '../components/SocialLinks';
 import ProfileSection from '../components/ProfileSection';

@@ -99,7 +99,6 @@ const AboutComponent = () => {
   );
 
   const textColor = useColorModeValue("gray.700", "gray.200");
-  const headingColor = useColorModeValue("purple.600", "purple.300");
   const borderColor = useColorModeValue("purple.300", "purple.600");
 
   return (

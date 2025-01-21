@@ -4,7 +4,6 @@ import { Box, Link } from '@mui/material';
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
 
-const MotionBox = motion(Box);
 
 const socialLinks = [
   { href: 'https://github.com/Princemashumu', label: 'GitHub', icon: <FaGithub /> },

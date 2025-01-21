@@ -1,5 +1,4 @@
 import React, { useState, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
@@ -21,7 +20,6 @@ import logo from '../assets/letter-p.png';
 
 const NavbarComponent = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const navigate = useNavigate();
 
   const isSmallScreen = useMediaQuery('(max-width:600px)');
   const navLinks = ['home', 'projects', 'skills', 'assessments', 'about'];
