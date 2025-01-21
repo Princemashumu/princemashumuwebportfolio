@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Box, Heading, Button, VStack, Flex, Text, List, ListItem, useColorModeValue } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+import ProfileimangeSection from './ProfileImageSection';
+
 
 const colors = {
   backgroundPrimary: 'black',
@@ -123,10 +125,15 @@ const AboutComponent = () => {
       >
         About Me
       </Heading>
-      <Text fontSize="md" mb={6} color={textColor}>
-        Welcome to my portfolio! Here, you can learn more about my journey, goals, and the feedback I've received from mentors and facilitators.
-      </Text>
+ 
 
+     {/* Profile Image Centered */}
+     <Box display="flex" justifyContent="center" alignItems="center" mb={6} left="44%" padding="7rem">
+        <ProfileimangeSection />
+      </Box>
+      <Text fontSize="md" mb={6} color={textColor} paddingTop={"5%"}>
+  "Coding is more than just writing lines of code—it's about solving problems, embracing challenges, and continuously learning. <br></br>Every bug you fix and every project you complete is a step forward in your journey to mastery. Keep coding, keep growing!"
+</Text>
       <MotionBox
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
