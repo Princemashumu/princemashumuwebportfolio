@@ -50,8 +50,8 @@ const Home = () => {
             loop
             style={{
               position: 'absolute',
-              top: '60%',
-              left: '35%',
+              top: '75%',
+              left: '28%',
               width: '44%',
               height: '44%',
               zIndex: '1',

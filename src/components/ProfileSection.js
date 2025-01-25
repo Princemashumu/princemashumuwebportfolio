@@ -48,8 +48,8 @@ const ProfileSection = ({ colors }) => (
           marginTop: "5rem",
         }}
       >
-        Hi, I am a mobile & web <br></br>
-        <span style={{ color: colors.accent }}>Software Engineer.</span>
+        Hi, I am a mobile & web Full Stack<br></br>
+        <span style={{ color: colors.accent }}>Software Developer.</span>
       </Typography>
 
       {/* Contact Me Button */}
@@ -62,7 +62,7 @@ const ProfileSection = ({ colors }) => (
         sx={{backgroundColor: '#800080', borderRadius: '25px', fontFamily: 'Anta, sans-serif', fontWeight: 400, textTransform: 'none', px: 2, py: 1, fontSize: '0.9rem', '&:hover': { backgroundColor: '#993399' } }}
         onClick={() => window.location.href = "mailto:princengwakomashumu@gmail.com"}
       >
-        Contact Me
+        Get In Touch
       </Button>
       </Tooltip>
     </MotionBox>
