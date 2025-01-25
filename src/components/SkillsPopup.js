@@ -44,7 +44,7 @@ const SkillsComponent = () => {
   // Gradient for card background (removed, replaced with black)
   const cardBg = useColorModeValue("gray.100", "black"); // Black for dark mode, light gray for light mode
 
-  const headingColor = useColorModeValue("purple.600", "purple.300");
+  const headingColor = useColorModeValue("blue.600", "blue.300"); // Softer blue tones
   const borderColor = useColorModeValue("purple.300", "purple.600");
 
   return (
@@ -55,7 +55,7 @@ const SkillsComponent = () => {
       backgroundColor={colors.backgroundPrimary}
       color={colors.primaryText}
       p={5}
-      minH="100vh"
+      minH="40vh"
     >
       <Box textAlign="center" mb={6}>
         <Heading
@@ -70,7 +70,11 @@ const SkillsComponent = () => {
         >
           Skills Matrix
         </Heading>
-        <Text fontSize="lg" color="gray.600">
+        <Text  textAlign="center"
+        fontSize="sm"
+        color="whiteAlpha.800"
+        mb={6}
+        letterSpacing="1px">
           Embark on a journey through my technical and creative expertise, where innovation meets passion.
         </Text>
       </Box>
@@ -83,7 +87,8 @@ const SkillsComponent = () => {
             borderWidth="1px"
             borderRadius="lg"
             boxShadow="0px 4px 10px rgba(128, 0, 128, 0.5)" // Purple shadow
-            backgroundColor={cardBg} // Black background for boxes
+            bg="rgba(255, 255, 255, 0.2)" // Glass effect background
+              backdropFilter="blur(10px)" // Frosted glass effect
             textAlign="center"
             cursor="pointer"
             onClick={() => setSelectedCategory(selectedCategory === category ? null : category)}
@@ -95,7 +100,7 @@ const SkillsComponent = () => {
             alignItems="center"
             justifyContent="center"
           >
-            <Heading size="md" color={headingColor}>
+            <Heading size="md" color={headingColor} fontFamily="bold">
               {category.replace(/([A-Z])/g, ' $1').trim()}
             </Heading>
           </MotionBox>
@@ -116,7 +121,8 @@ const SkillsComponent = () => {
                 borderWidth="1px"
                 borderRadius="lg"
                 boxShadow="0px 4px 10px rgba(128, 0, 128, 0.5)" // Purple shadow
-                backgroundColor={cardBg} // Black background for boxes
+                bg="rgba(255, 255, 255, 0.2)" // Glass effect background
+                backdropFilter="blur(10px)" // Frosted glass effect
                 textAlign="center"
                 cursor="pointer"
                 whileHover={{ scale: 1.05 }}

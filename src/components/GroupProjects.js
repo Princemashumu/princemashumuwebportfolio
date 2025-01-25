@@ -225,12 +225,13 @@ const GroupProjects = ({ projects }) => {
     "linear(to-r, gray.800, gray.900)"  // Dark mode gradient
   );
 
-  const textColor = useColorModeValue("gray.700", "gray.200");
-  const headingColor = useColorModeValue("purple.600", "purple.300");
-  const borderColor = useColorModeValue("purple.300", "purple.600");
-  const shadow = useColorModeValue("xl", "2xl");
-  const footerBg = useColorModeValue("gray.200", "gray.800");
-  const linkColor = borderColor;
+   const textColor = useColorModeValue("gray.800", "gray.100"); // Slightly more contrast
+  const headingColor = useColorModeValue("blue.600", "blue.300"); // Softer blue tones
+  const borderColor = useColorModeValue("rgba(255, 255, 255, 0.3)", "rgba(255, 255, 255, 0.2)"); // Transparent border
+  const shadow = useColorModeValue("lg", "2xl"); // Softer shadow in light mode
+  const footerBg = useColorModeValue("rgba(255, 255, 255, 0.2)", "rgba(0, 0, 0, 0.2)"); // Glass-like footer
+  const linkColor = useColorModeValue("blue.500", "blue.300"); // Subtle blue for links
+  
 
   // Check if projects array is empty or undefined
   if (!projects || projects.length === 0) {
@@ -274,8 +275,9 @@ const GroupProjects = ({ projects }) => {
       <Text
         textAlign="center"
         fontSize="sm"
-        color={textColor}
+        color="whiteAlpha.800"
         mb={6}
+        letterSpacing="1px"
       >
        Explore our collaborative projects that showcase teamwork, innovation, 
  and cutting-edge technology.
@@ -302,11 +304,11 @@ const GroupProjects = ({ projects }) => {
             <Card
               borderRadius="lg"
               overflow="hidden"
-              boxShadow={shadow}
-              bgGradient={cardBgGradient} // Apply gradient background
+              boxShadow="lg"
+              bg="rgba(255, 255, 255, 0.2)" // Glass effect background
+              backdropFilter="blur(10px)" // Frosted glass effect
               minH="300px"
-              border="1px solid"
-              borderColor={borderColor}
+              border="1px solid rgba(255, 255, 255, 0.3)" // Soft border
               _hover={{ boxShadow: "2xl", transform: "translateY(-4px)" }}
               transition="all 0.3s ease"
             >
@@ -377,7 +379,7 @@ const GroupProjects = ({ projects }) => {
                 </Box>
               </CardBody>
 
-              <Box p={3} bg={footerBg} textAlign="center" borderTop="1px solid" borderColor={borderColor}>
+              <Box p={3} bg="white" textAlign="center" borderTop="1px solid" borderColor={borderColor}>
                <Flex justify="center" gap={"20%"}> {/* Add spacing between links */}
                  <Link
                    href={project.githubLink || "#"}

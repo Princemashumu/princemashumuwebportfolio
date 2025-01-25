@@ -15,7 +15,7 @@ const AssesmentsComponent = () => {
   const borderColor = useColorModeValue("purple.300", "purple.600");
   const shadow = useColorModeValue("xl", "2xl");
   const footerBg = useColorModeValue("gray.200", "gray.800");
-  const linkColor = borderColor;
+  const linkColor = useColorModeValue("blue.500", "blue.300"); // Subtle blue for links
 
   return (
     <Box 
@@ -41,10 +41,11 @@ const AssesmentsComponent = () => {
         Assessments
       </Heading>
       <Text
-        textAlign="center"
-        fontSize="sm"
-        color={textColor}
-        mb={6}
+       textAlign="center"
+       fontSize="sm"
+       color="whiteAlpha.800"
+       mb={6}
+       letterSpacing="1px"
       >
         Discover more projects that highlight creativity, problem-solving, and technical skills.
       </Text>
@@ -53,7 +54,8 @@ const AssesmentsComponent = () => {
         <Box 
           flex="1"
           height="400px" 
-          backgroundColor="purple.500" 
+          bg="rgba(255, 255, 255, 0.2)" // Glass effect background
+          backdropFilter="blur(10px)" // Frosted glass effect
           display="flex" 
           alignItems="flex-start" 
           justifyContent="space-between"
@@ -62,7 +64,7 @@ const AssesmentsComponent = () => {
           color="white"
           overflow="hidden"
           boxShadow={shadow}
-          bgGradient={cardBgGradient} // Apply gradient background
+          // bgGradient={cardBgGradient} // Apply gradient background
           minH="300px"
           border="1px solid"
           borderColor={borderColor}
@@ -119,7 +121,8 @@ const AssesmentsComponent = () => {
         <Box 
           flex="1"
           height="400px" 
-          backgroundColor="purple.500" 
+          bg="rgba(255, 255, 255, 0.2)" // Glass effect background
+          backdropFilter="blur(10px)" // Frosted glass effect
           display="flex" 
           alignItems="flex-start" 
           justifyContent="space-between"
@@ -128,7 +131,7 @@ const AssesmentsComponent = () => {
           color="white"
           overflow="hidden"
           boxShadow={shadow}
-          bgGradient={cardBgGradient} // Apply gradient background
+          // bgGradient={cardBgGradient} // Apply gradient background
           minH="300px"
           border="1px solid"
           borderColor={borderColor}

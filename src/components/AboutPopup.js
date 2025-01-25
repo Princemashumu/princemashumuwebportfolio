@@ -130,14 +130,20 @@ const AboutComponent = () => {
      <Box display="flex" justifyContent="center" alignItems="center" mb={6} left="44%" padding="7rem">
         <ProfileimangeSection />
       </Box>
-      <Text fontSize="md" mb={6} color={textColor} paddingTop={"5%"}>
+      <Text textAlign="center"
+        fontSize="sm"
+        color="whiteAlpha.800"
+        mb={6}
+        letterSpacing="1px"
+         paddingTop={"5%"}>
   "Coding is more than just writing lines of code—it's about solving problems, embracing challenges, and continuously learning. <br></br>Every bug you fix and every project you complete is a step forward in your journey to mastery. Keep coding, keep growing!"
 </Text>
       <MotionBox
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
-        backgroundColor={colors.backgroundPrimary}
+        bg="rgba(255, 255, 255, 0.2)" // Glass effect background
+  backdropFilter="blur(10px)" // Frosted glass effect
         color={colors.primaryText}
         p={6}
         borderRadius="lg"
