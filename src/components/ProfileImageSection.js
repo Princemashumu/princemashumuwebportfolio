@@ -41,7 +41,7 @@ const ProfileImageSection = () => (
           borderRadius: '50%',
           objectFit: 'cover',
           borderBottom: '10px solid #800080',
-          top: '4%'
+          top: '5.5%'
         }}
       />
     </Box>

@@ -6,7 +6,7 @@ import ProfileimangeSection from './ProfileImageSection';
 
 const colors = {
   backgroundPrimary: 'black',
-  primaryText: 'white',
+  primaryText: 'black',
   accent: '#800080', // Purple
   secondaryAccent: '#9dd5d4', // Light teal
   linkHover: 'teal.500',
@@ -29,6 +29,7 @@ const AboutComponent = () => {
           color={colors.accent}
           cursor="pointer"
           onClick={() => setSelectedSection('selfReflections')}
+          
         >
           Self-Reflections
         </Heading>
@@ -132,7 +133,7 @@ const AboutComponent = () => {
       </Box>
       <Text textAlign="center"
         fontSize="sm"
-        color="whiteAlpha.800"
+        color="black"
         mb={6}
         letterSpacing="1px"
          paddingTop={"5%"}>
@@ -187,7 +188,7 @@ const AboutComponent = () => {
         ? "linear(to-r, purple.500, pink.500)" // Gradient for active button
         : "transparent"
     }
-    color={selectedSection === 'postProgramGoals' ? 'white' : colors.primaryText}
+    color={selectedSection === 'postProgramGoals' ? 'black' : colors.primaryText}
     borderRadius="full" // Rounded corners
     px={6} // Horizontal padding
     py={3} // Vertical padding

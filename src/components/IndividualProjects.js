@@ -85,7 +85,7 @@ const linkColor = useColorModeValue("blue.500", "blue.300"); // Subtle blue for 
       <Text
         textAlign="center"
         fontSize="sm"
-        color="whiteAlpha.800"
+        color="black"
         mb={6}
         letterSpacing="1px"
       >
@@ -114,7 +114,7 @@ const linkColor = useColorModeValue("blue.500", "blue.300"); // Subtle blue for 
   borderRadius="lg"
   overflow="hidden"
   boxShadow="lg"
-  bg="rgba(255, 255, 255, 0.2)" // Glass effect background
+  bg="rgba(54, 54, 54, 0.2)"
   backdropFilter="blur(10px)" // Frosted glass effect
   minH="300px"
   border="1px solid rgba(255, 255, 255, 0.3)" // Soft border

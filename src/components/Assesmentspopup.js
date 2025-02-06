@@ -26,6 +26,8 @@ const AssesmentsComponent = () => {
       textAlign="center" 
       padding="2rem"
       gap="1rem"
+      bg="#EFF8FF"
+      borderRadius="25px"
     >
       <Heading
         as="h3"
@@ -43,7 +45,7 @@ const AssesmentsComponent = () => {
       <Text
        textAlign="center"
        fontSize="sm"
-       color="whiteAlpha.800"
+       color="black"
        mb={6}
        letterSpacing="1px"
       >
@@ -54,7 +56,7 @@ const AssesmentsComponent = () => {
         <Box 
           flex="1"
           height="400px" 
-          bg="rgba(255, 255, 255, 0.2)" // Glass effect background
+          bg="rgba(54, 54, 54, 0.2)"
           backdropFilter="blur(10px)" // Frosted glass effect
           display="flex" 
           alignItems="flex-start" 
@@ -121,7 +123,7 @@ const AssesmentsComponent = () => {
         <Box 
           flex="1"
           height="400px" 
-          bg="rgba(255, 255, 255, 0.2)" // Glass effect background
+          bg="rgba(54, 54, 54, 0.2)"
           backdropFilter="blur(10px)" // Frosted glass effect
           display="flex" 
           alignItems="flex-start" 

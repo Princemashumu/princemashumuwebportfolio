@@ -14,7 +14,7 @@ const Splash = () => {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      backgroundColor=' rgb(23,25,35)'
+      backgroundColor='#ECF2FF'
       zIndex="999" // Ensure it's above other elements
     >
       {/* Circular Loader */}

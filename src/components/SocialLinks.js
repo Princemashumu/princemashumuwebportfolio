@@ -32,7 +32,7 @@ const SocialLinks = ({ iconSize, gapSize }) => (
           rel="noopener noreferrer"
           aria-label={social.label}
           sx={{
-            '&:hover': { color: '#fff', backgroundColor: '#70d6ff' },
+            '&:hover': { color: ' #70d6ff', backgroundColor: '#70d6ff' },
             padding: 1,
             border: '1px solid #70d6ff',
             borderRadius: '25px',

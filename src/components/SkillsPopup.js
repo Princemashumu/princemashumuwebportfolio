@@ -52,10 +52,11 @@ const SkillsComponent = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      backgroundColor={colors.backgroundPrimary}
-      color={colors.primaryText}
+      // backgroundColor={colors.backgroundPrimary}
+      color="black"
       p={5}
       minH="40vh"
+      // borderRadius= "25px"
     >
       <Box textAlign="center" mb={6}>
         <Heading
@@ -72,7 +73,7 @@ const SkillsComponent = () => {
         </Heading>
         <Text  textAlign="center"
         fontSize="sm"
-        color="whiteAlpha.800"
+        color="black"
         mb={6}
         letterSpacing="1px">
           Embark on a journey through my technical and creative expertise, where innovation meets passion.
@@ -87,7 +88,7 @@ const SkillsComponent = () => {
             borderWidth="1px"
             borderRadius="lg"
             boxShadow="0px 4px 10px rgba(128, 0, 128, 0.5)" // Purple shadow
-            bg="rgba(255, 255, 255, 0.2)" // Glass effect background
+           bg="rgba(54, 54, 54, 0.2)"
               backdropFilter="blur(10px)" // Frosted glass effect
             textAlign="center"
             cursor="pointer"
@@ -99,6 +100,7 @@ const SkillsComponent = () => {
             display="flex"
             alignItems="center"
             justifyContent="center"
+           
           >
             <Heading size="md" color={headingColor} fontFamily="bold">
               {category.replace(/([A-Z])/g, ' $1').trim()}

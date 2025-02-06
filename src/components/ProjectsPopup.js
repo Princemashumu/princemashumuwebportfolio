@@ -22,10 +22,15 @@ const Projects = () => {
     <Box
       width="100%"
       minHeight="100vh"
-      bg="gray.900"
-      color="white"
+      bg="#EFF8FF"
+      color="black"
       p={4}
       paddingLeft={"5%"}
+      borderTopLeftRadius="25px"
+      borderTopRightRadius="25px"
+      borderBottomLeftRadius="25px"
+      borderBottomRightRadius="25px"
+      boxShadow="0 0 10px rgba(0, 0, 0, 0.1)"
     >
       <Box maxWidth="1200px" margin="0 auto">
         <IndividualProjects projects={individualProjects} />
