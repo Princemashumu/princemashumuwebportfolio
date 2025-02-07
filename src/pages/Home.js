@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box } from '@mui/material'; // MUI Box component
+import { Box } from '@mui/material';
 import SplashScreen from '../components/SplashScreen';
 import SocialLinks from '../components/SocialLinks';
 import ProfileSection from '../components/ProfileSection';
@@ -8,23 +8,23 @@ import ProjectsPopup from '../components/ProjectsPopup';
 import SkillsPopup from '../components/SkillsPopup';
 import Assesmentspopup from '../components/Assesmentspopup';
 import AboutPopup from '../components/AboutPopup';
-
 import Lottie from 'lottie-react';
 import animationData1 from '../assets/anime7.json';
 
 const colors = {
-  backgroundPrimary: 'white', // Updated to light purple background
+  backgroundPrimary: 'white',
   primaryText: 'black',
   accent: '#9dd5d4',
   secondaryAccent: '#9dd5d4',
-  linkHover: '#00bcd4', // MUI color for teal
-  linkBgHover: '#6a1b9a', // MUI purple
-  linkBg: '#00bcd4', // MUI color for teal
+  linkHover: '#00bcd4',
+  linkBgHover: '#6a1b9a',
+  linkBg: '#00bcd4',
   border: '#9dd5d4',
 };
 
 const Home = () => {
   const [showSplash, setShowSplash] = useState(true);
+  const [showSocialLinks, setShowSocialLinks] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -33,20 +33,38 @@ const Home = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const footer = document.getElementById("footer");
+      if (footer) {
+        const footerPosition = footer.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (footerPosition <= windowHeight) {
+          setShowSocialLinks(false);
+        } else {
+          setShowSocialLinks(true);
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <SplashScreen showSplash={showSplash} />
-      <Box 
+      <Box
         sx={{
-          backgroundColor: colors.backgroundPrimary, // Updated background color
-          position: 'relative', 
-          minHeight: '100vh', 
+          backgroundColor: colors.backgroundPrimary,
+          position: 'relative',
+          minHeight: '100vh',
           overflowY: 'auto',
           overflowX: 'hidden',
         }}
       >
         {/* Hero Section */}
-        <Box id="home" sx={{ position: 'relative', height: '90vh', paddingRight: '-8%' }}>
+        <Box id="home" sx={{ position: 'relative', height: '90vh', padding: '2rem', left: '0.4rem' }}>
           <Lottie
             animationData={animationData1}
             loop
@@ -60,23 +78,28 @@ const Home = () => {
               transform: 'translate(-50%, -50%)',
             }}
           />
-          <SocialLinks iconSize={"30px"} gapSize={"30px"} />
+          {showSocialLinks && <SocialLinks iconSize={"30px"} gapSize={"30px"} />}
           <ProfileSection colors={colors} />
           <CircleAnimation colors={colors} />
         </Box>
 
         {/* Additional Content Section */}
-        <Box id="projects" sx={{ position: 'relative', minHeight: '90vh',marginTop:{xs:"15%"},padding: '2rem'}}>
+        <Box id="projects" sx={{ position: 'relative', minHeight: '90vh', marginTop: { xs: "15%" }, padding: '2rem', left: '1rem' }}>
           <ProjectsPopup colors={colors} />
         </Box>
         <Box id="skills" sx={{ position: 'relative', minHeight: '30vh', padding: '2rem', left: '1rem' }}>
           <SkillsPopup colors={colors} />
         </Box>
-        <Box id="assessments" sx={{ bg:"#EFF8FF",position: 'relative', minHeight: '100vh', padding: '2rem' }}>
+        <Box id="assessments" sx={{ bg: "#EFF8FF", position: 'relative', minHeight: '80vh', padding: '2rem', left: '1rem' }}>
           <Assesmentspopup colors={colors} />
         </Box>
-        <Box id="about" sx={{ position: 'relative', minHeight: '100vh', padding: '2rem' }}>
+        <Box id="about" sx={{ position: 'relative', minHeight: '50vh', padding: '3rem', left: '1rem' }}>
           <AboutPopup colors={colors} />
+        </Box>
+
+        {/* Footer Section */}
+        <Box id="footer" sx={{ position: 'relative', minHeight: '0', padding: '2rem'}}>
+          {/* Footer content goes here */}
         </Box>
       </Box>
     </>

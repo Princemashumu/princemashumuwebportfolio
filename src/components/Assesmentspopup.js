@@ -52,21 +52,27 @@ const AssesmentsComponent = () => {
         Discover more projects that highlight creativity, problem-solving, and technical skills.
       </Text>
 
-      <Flex gap="1rem" width="100%" alignItems="flex-start">
+      {/* Responsive Flex: Column on Mobile, Row on Desktop */}
+      <Flex 
+        gap="1rem" 
+        width="100%" 
+        alignItems="flex-start" 
+        flexDirection={{ base: "column", md: "row" }} // Stack on mobile
+      >
+        {/* Assessment 1 */}
         <Box 
           flex="1"
+          width="100%" // Full width on mobile
           height="400px" 
           bg="rgba(54, 54, 54, 0.2)"
-          backdropFilter="blur(10px)" // Frosted glass effect
+          backdropFilter="blur(10px)"
           display="flex" 
           alignItems="flex-start" 
           justifyContent="space-between"
-          // padding="1rem"
           borderRadius="md"
           color="white"
           overflow="hidden"
           boxShadow={shadow}
-          // bgGradient={cardBgGradient} // Apply gradient background
           minH="300px"
           border="1px solid"
           borderColor={borderColor}
@@ -84,10 +90,9 @@ const AssesmentsComponent = () => {
           >
             Assessment 1
           </Text>
-          {/* Content Section */}
           <Box flex="1" />
-          <Box p={3} bg={footerBg} textAlign="center" borderTop="1px solid" borderColor={borderColor} width={"100%"}>
-            <Flex justify="center" gap={"20%"}>
+          <Box p={3} bg={footerBg} textAlign="center" borderTop="1px solid" borderColor={borderColor} width="100%">
+            <Flex justify="center" gap="20%">
               <Link
                 href={"#"}
                 isExternal
@@ -99,8 +104,7 @@ const AssesmentsComponent = () => {
                 alignItems="center"
                 gap={2}
               >
-                <FaGithub size={20} /> {/* GitHub icon */}
-                GitHub
+                <FaGithub size={20} /> GitHub
               </Link>
               <Link
                 href={"#"}
@@ -113,27 +117,26 @@ const AssesmentsComponent = () => {
                 alignItems="center"
                 gap={2}
               >
-                <FaExternalLinkAlt size={20} /> {/* Live link icon */}
-                Demo
+                <FaExternalLinkAlt size={20} /> Demo
               </Link>
             </Flex>
           </Box>
         </Box>
-        
+
+        {/* Assessment 2 */}
         <Box 
           flex="1"
+          width="100%" // Full width on mobile
           height="400px" 
           bg="rgba(54, 54, 54, 0.2)"
-          backdropFilter="blur(10px)" // Frosted glass effect
+          backdropFilter="blur(10px)"
           display="flex" 
           alignItems="flex-start" 
           justifyContent="space-between"
-          // padding="1rem"
           borderRadius="md"
           color="white"
           overflow="hidden"
           boxShadow={shadow}
-          // bgGradient={cardBgGradient} // Apply gradient background
           minH="300px"
           border="1px solid"
           borderColor={borderColor}
@@ -151,10 +154,9 @@ const AssesmentsComponent = () => {
           >
             Assessment 2
           </Text>
-          {/* Content Section */}
           <Box flex="1" />
-          <Box p={3} bg={footerBg} textAlign="center" borderTop="1px solid" borderColor={borderColor} width={"100%"}>
-            <Flex justify="center" gap={"20%"}>
+          <Box p={3} bg={footerBg} textAlign="center" borderTop="1px solid" borderColor={borderColor} width="100%">
+            <Flex justify="center" gap="20%">
               <Link
                 href={"#"}
                 isExternal
@@ -166,8 +168,7 @@ const AssesmentsComponent = () => {
                 alignItems="center"
                 gap={2}
               >
-                <FaGithub size={20} /> {/* GitHub icon */}
-                GitHub
+                <FaGithub size={20} /> GitHub
               </Link>
               <Link
                 href={"#"}
@@ -180,8 +181,7 @@ const AssesmentsComponent = () => {
                 alignItems="center"
                 gap={2}
               >
-                <FaExternalLinkAlt size={20} /> {/* Live link icon */}
-                Demo
+                <FaExternalLinkAlt size={20} /> Demo
               </Link>
             </Flex>
           </Box>

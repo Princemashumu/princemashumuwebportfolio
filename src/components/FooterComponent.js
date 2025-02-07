@@ -5,6 +5,8 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { renderToString } from "react-dom/server";
+import { FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
+
 
 // Convert React Icon to an SVG string for Leaflet marker
 const customIcon = new L.DivIcon({
@@ -24,6 +26,8 @@ const Footer = () => {
         backgroundColor: "#1f1f1f",
         color: "white",
         padding: "40px 0",
+        borderTopLeftRadius:"25px",
+        borderTopRightRadius:"25px"
       }}
     >
       <Container maxWidth="lg">
@@ -45,19 +49,41 @@ const Footer = () => {
           </Grid>
 
           {/* Contact Info Section (Middle) */}
-          <Grid item xs={12} md={4} sx={{ textAlign: "center" }}>
-            <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+          <Grid item xs={12} md={4} sx={{ textAlign: "left"}}>
+            <Typography variant="h6" sx={{ fontWeight: "bold"}}>
               Contact Us
             </Typography>
-            <Typography>Email: <Link href="mailto:Princengwakomashumu@gmail.com" color="inherit">Princengwakomashumu@gmail.com</Link></Typography>
+            <Typography >Email: <Link href="mailto:Princengwakomashumu@gmail.com" color="inherit">Princengwakomashumu@gmail.com</Link></Typography>
             <Typography>Phone: <Link href="tel:+27682606328" color="inherit">+27 68 260 6328</Link></Typography>
             <Typography>
               Address: 22791 Naartjie Cres Ext 26, Soweto, South Africa
             </Typography>
           </Grid>
 
+          {/* Social Media Section (Middle) */}
+          <Grid item xs={12} md={4} sx={{ textAlign: "left", justifyContent: "space-between" }}>
+            <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+              Social Media
+            </Typography>
+            <Typography sx={{ paddingBottom: "10px" }}>
+              <Link href="https://www.linkedin.com/in/prince-ngwako-mashumu-0b1b4b1b4/" color="inherit">
+              <FaLinkedin size={20}/>
+              </Link>
+            </Typography >
+            <Typography sx={{ paddingBottom: "10px" }}>
+            <Link href="https://www.linkedin.com/in/prince-ngwako-mashumu-0b1b4b1b4/" color="inherit">
+            <FaGithub size={20}/>
+            </Link>
+            </Typography>
+            <Typography sx={{ paddingBottom: "10px" }}>
+            <Link href="https://www.linkedin.com/in/prince-ngwako-mashumu-0b1b4b1b4/" color="inherit">
+            <FaWhatsapp size={20}/>
+            </Link>
+            </Typography>
+          </Grid>
+
           {/* Map Section (Right) */}
-          <Grid item xs={12} md={4} sx={{ textAlign: "right" }}>
+          {/* <Grid item xs={12} md={4} sx={{ textAlign: "right" }}>
             <Box
               sx={{
                 width: "100%",
@@ -80,7 +106,7 @@ const Footer = () => {
                 </Marker>
               </MapContainer>
             </Box>
-          </Grid>
+          </Grid> */}
         </Grid>
 
         {/* Footer Bottom */}
