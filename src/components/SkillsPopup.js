@@ -86,10 +86,11 @@ const SkillsComponent = () => {
             p={8}
             minH="150px"
             borderWidth="1px"
+            fontFamily="roboto"
             borderRadius="lg"
-            boxShadow="0px 4px 10px rgba(128, 0, 128, 0.5)" // Purple shadow
-           bg="rgba(54, 54, 54, 0.2)"
-              backdropFilter="blur(10px)" // Frosted glass effect
+            boxShadow="0px 4px 10px rgba(0, 98, 128, 0.5)" // Purple shadow
+            bg="rgba(54, 54, 54, 0.2)"
+            backdropFilter="blur(10px)" // Frosted glass effect
             textAlign="center"
             cursor="pointer"
             onClick={() => setSelectedCategory(selectedCategory === category ? null : category)}
@@ -122,7 +123,7 @@ const SkillsComponent = () => {
                 minH="150px"
                 borderWidth="1px"
                 borderRadius="lg"
-                boxShadow="0px 4px 10px rgba(128, 0, 128, 0.5)" // Purple shadow
+                boxShadow="0px 4px 10px rgb(236,242,255)" // Purple shadow
                 bg="rgba(255, 255, 255, 0.2)" // Glass effect background
                 backdropFilter="blur(10px)" // Frosted glass effect
                 textAlign="center"

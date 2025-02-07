@@ -52,7 +52,7 @@ const ProfileSection = ({ colors }) => {
           sx={{
             fontFamily: "Anta, sans-serif",
             fontWeight: 400,
-            fontSize: { xs: "1rem", sm: "1.5rem", md: "1.8rem", lg: "1.5rem" },
+            fontSize: { xs: "1rem", sm: "1.5rem", md: "1.8rem", lg: "1.3rem" },
             color: "#333333",
             letterSpacing: { xs: "1px", md: "1px" },
             marginBottom: "1rem",
