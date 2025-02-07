@@ -31,7 +31,7 @@ const ProfileImageSection = () => (
         bgClip="text"
         fontWeight="extrabold"
         textTransform="uppercase"
-        paddingBottom="2rem"
+        paddingTop="2rem"
         // alignItems={"center"}
       >
         About Me
@@ -70,8 +70,8 @@ const ProfileImageSection = () => (
     color: "#800080", // Matches the accent color
   }}
 >
-"The biggest risk is not taking any risk... In a world that is changing really quickly,  
-the only strategy that is guaranteed to fail is not taking risks." – Mark Zuckerberg
+ "In a world that is changing really quickly,  
+  the only strategy that is guaranteed to fail is not taking risks." – Mark Zuckerberg
 </Typography>
   </Box>
 );
