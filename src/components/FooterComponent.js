@@ -66,17 +66,17 @@ const Footer = () => {
               Social Media
             </Typography>
             <Typography sx={{ paddingBottom: "10px" }}>
-              <Link href="https://www.linkedin.com/in/prince-ngwako-mashumu-0b1b4b1b4/" color="inherit">
+              <Link href='https://www.linkedin.com/in/prince-ngwako-mashumu-77977924b/' color="inherit">
               <FaLinkedin size={20}/>
               </Link>
             </Typography >
             <Typography sx={{ paddingBottom: "10px" }}>
-            <Link href="https://www.linkedin.com/in/prince-ngwako-mashumu-0b1b4b1b4/" color="inherit">
+            <Link href='https://github.com/Princemashumu' color="inherit">
             <FaGithub size={20}/>
             </Link>
             </Typography>
             <Typography sx={{ paddingBottom: "10px" }}>
-            <Link href="https://www.linkedin.com/in/prince-ngwako-mashumu-0b1b4b1b4/" color="inherit">
+            <Link href='https://wa.me/0682606328' color="inherit">
             <FaWhatsapp size={20}/>
             </Link>
             </Typography>
