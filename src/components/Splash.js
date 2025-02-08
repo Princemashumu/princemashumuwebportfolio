@@ -30,8 +30,14 @@ const Splash = () => {
         bottom="10%" // Adjust this value to move the loader down
       />
       {/* Logo */}
-      <Image src={logo} alt="Splash Logo" width="450px" /> {/* Adjust the logo size as needed */}
-      
+      <Image 
+  src={logo} 
+  alt="Splash Logo" 
+  boxSize={{ base: "100px", sm: "150px", md: "200px", lg: "250px" }} // Responsive size
+  maxWidth="100%" // Ensures it doesn't overflow
+  objectFit="contain" // Keeps aspect ratio
+/>
+
       {/* Add the CSS for the spinner */}
       <style jsx>{`
         @keyframes spin {
