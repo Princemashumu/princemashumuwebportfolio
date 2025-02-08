@@ -6,6 +6,7 @@ import {
   Divider,
   Text,
   useColorModeValue,
+  Button
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import {
@@ -89,14 +90,14 @@ const SkillsComponent = () => {
             fontFamily="roboto"
             borderRadius="lg"
             boxShadow="0px 4px 10px rgba(0, 98, 128, 0.5)" // Purple shadow
-            bg="rgba(54, 54, 54, 0.2)"
+            bg="linear-gradient(135deg, rgba(0, 98, 128, 0.3), rgba(0, 98, 128, 0.1))" // Gradient background
             backdropFilter="blur(10px)" // Frosted glass effect
             textAlign="center"
             cursor="pointer"
             onClick={() => setSelectedCategory(selectedCategory === category ? null : category)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            border="1px solid"
+            border="0px transparent"
             borderColor={borderColor}
             display="flex"
             alignItems="center"
@@ -112,42 +113,47 @@ const SkillsComponent = () => {
       {selectedCategory && (
         <>
           <Divider my={6} borderColor="purple.500" />
-          <Heading size="md" mb={4} color={headingColor}>
+          {/* <Heading size="md" mb={4} color={headingColor}>
             {selectedCategory.replace(/([A-Z])/g, ' $1').trim()}
-          </Heading>
+          </Heading> */}
           <SimpleGrid columns={[2, 3, 4]} spacing={6}>
             {categorizedSkills[selectedCategory].map((skill) => (
               <MotionBox
                 key={skill.skill}
                 p={8}
-                minH="150px"
-                borderWidth="1px"
-                borderRadius="lg"
-                boxShadow="0px 4px 10px rgb(236,242,255)" // Purple shadow
-                bg="rgba(255, 255, 255, 0.2)" // Glass effect background
-                backdropFilter="blur(10px)" // Frosted glass effect
+                minH="50px"
+                // borderWidth="1px"
+                // borderRadius="lg"
+                //boxShadow="0px 4px 10px rgb(236,242,255)" // Purple shadow
+                // bg="rgba(255, 255, 255, 0.2)" // Glass effect background
+                // bg="linear-gradient(135deg, rgba(0, 98, 128, 0.3),rgba(255, 255, 255, 0.2))" // Gradient background
+      
                 textAlign="center"
-                cursor="pointer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                border="1px solid"
-                borderColor={borderColor}
+                // border="0px solid"
+                // borderColor={borderColor}
                 display="flex"
                 flexDirection="column"
                 alignItems="center"
                 justifyContent="center"
               >
                 {React.cloneElement(iconMap[skill.icon] || <Box>🔧</Box>, { size: 48 })}
-                <Text mt={4} fontWeight="bold"
+                <Button mt={4} fontWeight="bold"
                   bgGradient="linear(to-r, purple.500, pink.500)"
                   color="white"
                   borderRadius="full"
                   px={4}
                   py={2}
                   fontSize="md"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  boxShadow="0px 4px 10px rgb(236,242,255)" // Purple shadow
+                  backdropFilter="blur(10px)" // Frosted glass effect
+                  cursor="pointer"
+                  backgroundColor= '#800080'
+                  fontFamily= 'Anta, sans-serif'
                 >
                   {skill.skill}
-                </Text>
+                </Button>
               </MotionBox>
             ))}
           </SimpleGrid>

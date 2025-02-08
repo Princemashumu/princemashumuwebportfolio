@@ -14,7 +14,7 @@ const Splash = () => {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      backgroundColor='#ECF2FF'
+      bg="linear-gradient(205deg, rgba(0, 98, 128, 0.86),rgba(255, 255, 255, 0.2))"
       zIndex="999" // Ensure it's above other elements
     >
       {/* Circular Loader */}

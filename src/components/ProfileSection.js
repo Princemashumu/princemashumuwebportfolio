@@ -59,8 +59,8 @@ const ProfileSection = ({ colors }) => {
             marginTop: "4rem",
           }}
         >
-          Hi, My name is Prince Mashumu.<br></br> I am a Junior 
-          {" "}
+          Hi, My name is Prince Mashumu.<br></br> I am a Junior  
+          {"  "}
           <motion.span
             key={titles[index]} // Re-animate when text changes
             initial={{ opacity: 0, y: -10 }}
