@@ -8,7 +8,7 @@ import { FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
 const socialLinks = [
   { href: 'https://github.com/Princemashumu', label: 'GitHub', icon: <FaGithub /> },
   { href: 'https://www.linkedin.com/in/prince-ngwako-mashumu-77977924b/', label: 'LinkedIn', icon: <FaLinkedin /> },
-  { href: 'https://wa.me/0682606328', label: 'WhatsApp', icon: <FaWhatsapp /> },
+  { href: 'https://wa.me/+27682606328', label: 'WhatsApp', icon: <FaWhatsapp /> },
 ];
 
 const SocialLinks = ({ iconSize, gapSize }) => (
