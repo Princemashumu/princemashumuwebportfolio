@@ -56,7 +56,16 @@ const AboutComponent = () => {
   };
 
   return (
-    <Box textAlign="center" padding="2rem" justifyContent="space-between">
+    <Box textAlign="center" padding="2rem" justifyContent="space-between" bg="#EFF8FF"
+    color="black"
+    // p={4}
+    // paddingLeft={"5%"}
+    borderTopLeftRadius="25px"
+    borderTopRightRadius="25px"
+    borderBottomLeftRadius="25px"
+    borderBottomRightRadius="25px"
+    boxShadow="0 0 10px rgba(0, 0, 0, 0.1)"
+    >
      
 
       {/* Profile Image Centered */}
