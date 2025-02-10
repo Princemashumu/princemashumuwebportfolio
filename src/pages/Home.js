@@ -10,6 +10,8 @@ import Assesmentspopup from '../components/Assesmentspopup';
 import AboutPopup from '../components/AboutPopup';
 import Lottie from 'lottie-react';
 import animationData1 from '../assets/anime7.json';
+import ContactForm from "../components/ContactForm";
+import EducationTimeline from "../components/EducationTimeline";
 
 const colors = {
   backgroundPrimary: 'white',
@@ -93,12 +95,18 @@ const Home = () => {
         <Box id="assessments" sx={{ bg: "#EFF8FF", position: 'relative', minHeight: '80vh', padding: '2rem', left: '1rem' }}>
           <Assesmentspopup colors={colors} />
         </Box>
-        <Box id="about" sx={{ position: 'relative', minHeight: '50vh', padding: '3rem', left: '1rem' }}>
+        <Box id="education" sx={{ position: 'relative', minHeight: '40vh',paddingBotton:"0",padding: '3rem', left: '1rem' }}>
+          <EducationTimeline />
+        </Box>
+        <Box id="about" sx={{ bg: "#EFF8FF",position: 'relative', minHeight: '50vh', padding: '3rem', left: '1rem' }}>
           <AboutPopup colors={colors} />
+        </Box>
+        <Box id="about" sx={{ position: 'relative', minHeight: '50vh', padding: '3rem', left: '1rem' }}>
+          <ContactForm /> {/* Add Contact Form here */}
         </Box>
 
         {/* Footer Section */}
-        <Box id="footer" sx={{ position: 'relative', minHeight: '0', padding: '2rem'}}>
+        <Box id="footer" sx={{ position: 'relative', minHeight: '0', padding: '2rem' }}>
           {/* Footer content goes here */}
         </Box>
       </Box>
