@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Heading, Button, VStack, Flex, Text, List, ListItem, useColorModeValue } from '@chakra-ui/react';
+import { Box, Heading, Button, VStack, Flex, Text, List, ListItem} from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import ProfileImageSection from './ProfileImageSection';
 

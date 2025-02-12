@@ -1,57 +1,47 @@
 {
-    "DesignSkills": [
-      {
-        "skill": "Figma",
-        "level": "Advanced",
-        "notes": "Created wireframes and prototypes.",
-        "icon": "FaFigma"
-      }
-    ],
-    "FrontendSkills": [
-      {
-        "skill": "HTML5",
-        "level": "Advanced",
-        "notes": "Used in multiple projects.",
-        "icon": "FaHtml5"
-      },
-      {
-        "skill": "CSS",
-        "level": "Advanced",
-        "notes": "Styled responsive layouts.",
-        "icon": "FaCss3Alt"
-      },
-      {
-        "skill": "JavaScript",
-        "level": "Advanced",
-        "notes": "Built dynamic web applications.",
-        "icon": "FaJs"
-      },
-      {
-        "skill": "React",
-        "level": "Advanced",
-        "notes": "Developed modern web apps.",
-        "icon": "FaReact"
-      }
-    ],
-    "BackendSkills": [
-      {
-        "skill": "Node.js",
-        "level": "Advanced",
-        "notes": "Built RESTful APIs.",
-        "icon": "FaNodeJs"
-      },
-      {
-        "skill": "Express.js",
-        "level": "Advanced",
-        "notes": "Created server-side routes.",
-        "icon": "SiExpress"
-      },
-      {
-        "skill": "MongoDB",
-        "level": "Intermediate",
-        "notes": "Designed and queried NoSQL databases.",
-        "icon": "SiMongodb"
-      }
-    ]
-  }
-  
+  "Algorithms": [
+    { "skill": "C++", "level": "Advanced", "notes": "Competitive programming and DSA", "icon": "FaCuttlefish" },
+    { "skill": "JavaScript", "level": "Advanced", "notes": "Solving algorithmic problems", "icon": "FaJs" },
+    { "skill": "TypeScript", "level": "Intermediate", "notes": "Type-safe algorithms", "icon": "SiTypescript" },
+    { "skill": "C#", "level": "Intermediate", "notes": "OOP & design patterns", "icon": "SiCsharp" }
+  ],
+  "Prototype": [
+    { "skill": "Expo Go", "level": "Advanced", "notes": "Prototyping React Native apps", "icon": "SiExpo" }
+  ],
+  "Frontend Development": [
+    { "skill": "HTML5", "level": "Advanced", "notes": "Used in multiple projects", "icon": "FaHtml5" },
+    { "skill": "CSS3", "level": "Advanced", "notes": "Styled responsive layouts", "icon": "FaCss3Alt" },
+    { "skill": "ReactJS", "level": "Advanced", "notes": "Modern web apps", "icon": "FaReact" },
+    { "skill": "React Native", "level": "Intermediate", "notes": "Cross-platform mobile apps", "icon": "FaReact" },
+    { "skill": "Tailwind", "level": "Advanced", "notes": "Utility-first CSS", "icon": "SiTailwindcss" },
+    { "skill": "Material UI", "level": "Intermediate", "notes": "React component library", "icon": "SiMaterialui" }
+  ],
+  "Backend Development": [
+    { "skill": "Node.js", "level": "Advanced", "notes": "Built REST APIs", "icon": "FaNodeJs" },
+    { "skill": "Express.js", "level": "Advanced", "notes": "Created server-side routes", "icon": "SiExpress" }
+  ],
+  "Database Management": [
+    { "skill": "MySQL", "level": "Intermediate", "notes": "Relational database management", "icon": "SiMysql" },
+    { "skill": "MongoDB", "level": "Intermediate", "notes": "NoSQL database", "icon": "SiMongodb" },
+    { "skill": "SQLite", "level": "Intermediate", "notes": "Lightweight SQL database", "icon": "SiSqlite" },
+    { "skill": "Firebase", "level": "Intermediate", "notes": "Cloud database & authentication", "icon": "SiFirebase" },
+    { "skill": "JSON Server", "level": "Intermediate", "notes": "Mock REST API", "icon": "SiJson" }
+  ],
+  "Design & UI/UX": [
+    { "skill": "Figma", "level": "Advanced", "notes": "Wireframes & prototypes", "icon": "FaFigma" },
+    { "skill": "Affinity Designer", "level": "Intermediate", "notes": "Vector graphics & UI design", "icon": "SiAffinitydesigner" }
+  ],
+  "Version Control": [
+    { "skill": "Git", "level": "Advanced", "notes": "Version control & collaboration", "icon": "FaGit" },
+    { "skill": "GitHub", "level": "Advanced", "notes": "Repository hosting & CI/CD", "icon": "FaGithub" },
+    { "skill": "Trello", "level": "Intermediate", "notes": "Task & project management", "icon": "FaTrello" }
+  ],
+  "Soft Skills & Problem-Solving": [
+    { "skill": "Logical Thinking", "level": "Expert", "notes": "Problem-solving skills", "icon": "FaBrain" },
+    { "skill": "Critical Thinking", "level": "Expert", "notes": "Analyzing complex problems", "icon": "FaLightbulb" },
+    { "skill": "SCRUM Methodology", "level": "Intermediate", "notes": "Agile project management", "icon": "FaTasks" }
+  ],
+  "Project Management Tool": [
+    { "skill": "Trello", "level": "Intermediate", "notes": "Task management & planning", "icon": "FaTrello" }
+  ]
+}

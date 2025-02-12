@@ -1,25 +1,12 @@
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Box, Typography, Container, Grid, Link } from "@mui/material";
-import { FaMapMarkerAlt } from "react-icons/fa";
 import "leaflet/dist/leaflet.css";
-import L from "leaflet";
-import { renderToString } from "react-dom/server";
 import { FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
 
 
-// Convert React Icon to an SVG string for Leaflet marker
-const customIcon = new L.DivIcon({
-  html: renderToString(<FaMapMarkerAlt size={40} color="red" />),
-  className: "",
-  iconSize: [40, 40],
-  iconAnchor: [20, 40],
-  popupAnchor: [0, -40],
-});
+
 
 const Footer = () => {
-  const position = [-26.2805, 27.8494]; // Coordinates for 22791 Naartjie Cres, Soweto
-
   return (
     <Box
       sx={{

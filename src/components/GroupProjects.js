@@ -219,18 +219,12 @@ const GroupProjects = ({ projects }) => {
     }
   };
 
-  // Gradient for card background
-  const cardBgGradient = useColorModeValue(
-    "linear(to-r, purple.50, pink.50)", // Light mode gradient
-    "linear(to-r, gray.800, gray.900)"  // Dark mode gradient
-  );
+
 
    const textColor = useColorModeValue("gray.800", "gray.100"); // Slightly more contrast
   const headingColor = useColorModeValue("blue.600", "blue.300"); // Softer blue tones
   const borderColor = useColorModeValue("rgba(255, 255, 255, 0.3)", "rgba(255, 255, 255, 0.2)"); // Transparent border
-  const shadow = useColorModeValue("lg", "2xl"); // Softer shadow in light mode
-  const footerBg = useColorModeValue("rgba(255, 255, 255, 0.2)", "rgba(0, 0, 0, 0.2)"); // Glass-like footer
-  const linkColor = useColorModeValue("blue.500", "blue.300"); // Subtle blue for links
+ const linkColor = useColorModeValue("blue.500", "blue.300"); // Subtle blue for links
   
 
   // Check if projects array is empty or undefined

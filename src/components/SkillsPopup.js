@@ -6,9 +6,12 @@ import {
   Divider,
   Text,
   useColorModeValue,
-  Button
+  Button,
+  Flex
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+
+// Font Awesome icons
 import {
   FaFigma,
   FaHtml5,
@@ -16,8 +19,31 @@ import {
   FaJs,
   FaReact,
   FaNodeJs,
+  FaGit,
+  FaGithub,
+  FaTrello,
+  FaBrain,
+  FaLightbulb,
+  FaTasks,
+  FaCuttlefish,
+  FaCode
 } from 'react-icons/fa';
-import { SiMongodb, SiExpress } from 'react-icons/si';
+
+// Simple Icons
+import {
+  SiExpress,
+  SiMongodb,
+  SiMysql,
+  SiFirebase,
+  SiSqlite,
+  SiTailwindcss,
+  SiMui,
+  SiExpo,
+  SiTypescript,
+  SiAffinitydesigner,
+  SiJson
+} from 'react-icons/si';
+
 import categorizedSkills from './data/skills.json';
 
 const iconMap = {
@@ -27,14 +53,25 @@ const iconMap = {
   FaJs: <FaJs color="yellow" />,
   FaReact: <FaReact color="cyan" />,
   FaNodeJs: <FaNodeJs color="green" />,
-  SiExpress: <SiExpress color="red" />,
-  SiMongodb: <SiMongodb color="cyan" />,
-};
-
-const colors = {
-  backgroundPrimary: 'rgb(23,25,35)', // Main background remains the same
-  primaryText: 'white',
-  accent: '#800080',
+  SiExpress: <SiExpress color="gray" />,
+  SiMongodb: <SiMongodb color="green" />,
+  SiMysql: <SiMysql color="blue" />,
+  SiFirebase: <SiFirebase color="orange" />,
+  SiSqlite: <SiSqlite color="blue" />,
+  SiTailwindcss: <SiTailwindcss color="teal" />,
+  SiMui: <SiMui color="blue" />,
+  SiExpo: <SiExpo color="black" />,
+  SiTypescript: <SiTypescript color="blue" />,
+  FaCode: <FaCode color="purple" />,
+  SiAffinitydesigner: <SiAffinitydesigner color="darkblue" />,
+  SiJson: <SiJson color="brown" />,
+  FaGit: <FaGit color="orange" />,
+  FaGithub: <FaGithub color="black" />,
+  FaTrello: <FaTrello color="blue" />,
+  FaBrain: <FaBrain color="purple" />,
+  FaLightbulb: <FaLightbulb color="yellow" />,
+  FaTasks: <FaTasks color="green" />,
+  FaCuttlefish: <FaCuttlefish color="blue" />
 };
 
 const MotionBox = motion(Box);
@@ -42,22 +79,13 @@ const MotionBox = motion(Box);
 const SkillsComponent = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  // Gradient for card background (removed, replaced with black)
-  const cardBg = useColorModeValue("gray.100", "black"); // Black for dark mode, light gray for light mode
-
-  const headingColor = useColorModeValue("blue.600", "blue.300"); // Softer blue tones
-  const borderColor = useColorModeValue("purple.300", "purple.600");
-
   return (
-    <MotionBox
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
-      // backgroundColor={colors.backgroundPrimary}
-      color="black"
-      p={5}
+    <MotionBox 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }} 
+      transition={{ duration: 0.3 }} 
+      p={5} 
       minH="40vh"
-      // borderRadius= "25px"
     >
       <Box textAlign="center" mb={6}>
         <Heading
@@ -72,92 +100,74 @@ const SkillsComponent = () => {
         >
           Skills Matrix
         </Heading>
-        <Text  textAlign="center"
-        fontSize="sm"
-        color="black"
-        mb={6}
-        letterSpacing="1px">
+        <Text fontSize="sm" color="black" mb={6} letterSpacing="1px">
           Embark on a journey through my technical and creative expertise, where innovation meets passion.
         </Text>
       </Box>
-      <SimpleGrid columns={[1, null, 3]} spacing={8}>
+      
+      <Flex wrap="wrap" justify="center" align="center" gap={4}>
         {Object.keys(categorizedSkills).map((category) => (
           <MotionBox
             key={category}
-            p={8}
-            minH="150px"
-            borderWidth="1px"
-            fontFamily="roboto"
-            borderRadius="lg"
-            boxShadow="0px 4px 10px rgba(0, 98, 128, 0.5)" // Purple shadow
-            bg="linear-gradient(135deg, rgba(0, 98, 128, 0.3), rgba(0, 98, 128, 0.1))" // Gradient background
-            backdropFilter="blur(10px)" // Frosted glass effect
+            minW="120px"
             textAlign="center"
             cursor="pointer"
             onClick={() => setSelectedCategory(selectedCategory === category ? null : category)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            border="0px transparent"
-            borderColor={borderColor}
+            fontWeight="bold"
+            fontSize="sm"
             display="flex"
-            alignItems="center"
             justifyContent="center"
-           
+            alignItems="center"
+            border="2px solid"
+            borderColor="gray.300"
+            borderRadius="50px"
+            transition="all 0.2s ease-in-out"
+            _hover={{ borderColor: "#800080" }}
           >
-            <Heading size="md" color={headingColor} fontFamily="bold">
-              {category.replace(/([A-Z])/g, ' $1').trim()}
-            </Heading>
+            {category.replace(/([A-Z])/g, ' $1').trim()}
           </MotionBox>
         ))}
-      </SimpleGrid>
-      {selectedCategory && (
-        <>
-          <Divider my={6} borderColor="purple.500" />
-          {/* <Heading size="md" mb={4} color={headingColor}>
-            {selectedCategory.replace(/([A-Z])/g, ' $1').trim()}
-          </Heading> */}
-          <SimpleGrid columns={[2, 3, 4]} spacing={6}>
-            {categorizedSkills[selectedCategory].map((skill) => (
-              <MotionBox
-                key={skill.skill}
-                p={8}
-                minH="50px"
-                // borderWidth="1px"
-                // borderRadius="lg"
-                //boxShadow="0px 4px 10px rgb(236,242,255)" // Purple shadow
-                // bg="rgba(255, 255, 255, 0.2)" // Glass effect background
-                // bg="linear-gradient(135deg, rgba(0, 98, 128, 0.3),rgba(255, 255, 255, 0.2))" // Gradient background
+      </Flex>
       
-                textAlign="center"
-                // border="0px solid"
-                // borderColor={borderColor}
-                display="flex"
-                flexDirection="column"
-                alignItems="center"
-                justifyContent="center"
-              >
-                {React.cloneElement(iconMap[skill.icon] || <Box>🔧</Box>, { size: 48 })}
-                <Button mt={4} fontWeight="bold"
-                  bgGradient="linear(to-r, purple.500, pink.500)"
-                  color="white"
-                  borderRadius="full"
-                  px={4}
-                  py={2}
-                  fontSize="md"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  boxShadow="0px 4px 10px rgb(236,242,255)" // Purple shadow
-                  backdropFilter="blur(10px)" // Frosted glass effect
-                  cursor="pointer"
-                  backgroundColor= '#800080'
-                  fontFamily= 'Anta, sans-serif'
-                >
-                  {skill.skill}
-                </Button>
-              </MotionBox>
-            ))}
-          </SimpleGrid>
-        </>
+      {selectedCategory && (
+       <>
+       <Divider my={2} borderColor="purple.500" />
+       <SimpleGrid columns={[2, 3, 4]} spacing={1}> {/* Reduced spacing */}
+         {categorizedSkills[selectedCategory].map((skill) => (
+           <MotionBox 
+             key={skill.skill} 
+             p={2}  // Reduced padding
+             textAlign="center" 
+             display="flex" 
+             flexDirection="column" 
+             alignItems="center" 
+             justifyContent="center"
+           >
+             {React.cloneElement(iconMap[skill.icon] || <Box>🔧</Box>, { size: 40 })} {/* Reduced icon size */}
+             <Button
+               mt={3}  // Slightly reduced margin-top
+               fontWeight="bold"
+               bgGradient="linear(to-r, purple.500, pink.500)"
+               color="white"
+               borderRadius="full"
+               px={3} // Reduced padding
+               py={1} // Reduced padding
+               fontSize="sm" // Smaller font size
+               whileHover={{ scale: 1.05 }}
+               whileTap={{ scale: 0.95 }}
+               boxShadow="0px 2px 6px rgb(236,242,255)" // Reduced shadow effect
+               backgroundColor="#800080"
+               fontFamily="Anta, sans-serif"
+             >
+               {skill.skill}
+             </Button>
+           </MotionBox>
+         ))}
+       </SimpleGrid>
+     </>
+     
       )}
     </MotionBox>
   );
